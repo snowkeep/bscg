@@ -420,133 +420,133 @@
     ],
     "weapons": [
         {
-            "min": "1",
-            "max": "4",
+            "min": 1,
+            "max": 4,
             "weapon": "Club"
         },
         {
-            "min": "5",
-            "max": "8",
+            "min": 5,
+            "max": 8,
             "weapon": "Dagger"
         },
         {
-            "min": "9",
-            "max": "12",
+            "min": 9,
+            "max": 12,
             "weapon": "Greatclub"
         },
         {
-            "min": "13",
-            "max": "16",
+            "min": 13,
+            "max": 16,
             "weapon": "Handaxe"
         },
         {
-            "min": "17",
-            "max": "20",
+            "min": 17,
+            "max": 20,
             "weapon": "Mace"
         },
         {
-            "min": "21",
-            "max": "24",
+            "min": 21,
+            "max": 24,
             "weapon": "Quarterstaff"
         },
         {
-            "min": "25",
-            "max": "28",
+            "min": 25,
+            "max": 28,
             "weapon": "Spear"
         },
         {
-            "min": "29",
-            "max": "32",
+            "min": 29,
+            "max": 32,
             "weapon": "Bow"
         },
         {
-            "min": "33",
-            "max": "36",
+            "min": 33,
+            "max": 36,
             "weapon": "Dart"
         },
         {
-            "min": "37",
-            "max": "40",
+            "min": 37,
+            "max": 40,
             "weapon": "Javelin"
         },
         {
-            "min": "41",
-            "max": "44",
+            "min": 41,
+            "max": 44,
             "weapon": "Net"
         },
         {
-            "min": "45",
-            "max": "50",
+            "min": 45,
+            "max": 50,
             "weapon": "Sling"
         },
         {
-            "min": "51",
-            "max": "54",
+            "min": 51,
+            "max": 54,
             "weapon": "ThrowingKnife"
         },
         {
-            "min": "55",
-            "max": "58",
+            "min": 55,
+            "max": 58,
             "weapon": "Battleaxe"
         },
         {
-            "min": "59",
-            "max": "62",
+            "min": 59,
+            "max": 62,
             "weapon": "Flail"
         },
         {
-            "min": "63",
-            "max": "66",
+            "min": 63,
+            "max": 66,
             "weapon": "Glaive"
         },
         {
-            "min": "67",
-            "max": "70",
+            "min": 67,
+            "max": 70,
             "weapon": "Greatsword"
         },
         {
-            "min": "71",
-            "max": "74",
+            "min": 71,
+            "max": 74,
             "weapon": "Lance"
         },
         {
-            "min": "75",
-            "max": "78",
+            "min": 75,
+            "max": 78,
             "weapon": "Longsword"
         },
         {
-            "min": "79",
-            "max": "82",
+            "min": 79,
+            "max": 82,
             "weapon": "Maul"
         },
         {
-            "min": "83",
-            "max": "86",
+            "min": 83,
+            "max": 86,
             "weapon": "Morningstar"
         },
         {
-            "min": "87",
-            "max": "90",
+            "min": 87,
+            "max": 90,
             "weapon": "Scimitar"
         },
         {
-            "min": "91",
-            "max": "94",
+            "min": 91,
+            "max": 94,
             "weapon": "Shortsword"
         },
         {
-            "min": "95",
-            "max": "96",
+            "min": 95,
+            "max": 96,
             "weapon": "Trident"
         },
         {
-            "min": "97",
-            "max": "98",
+            "min": 97,
+            "max": 98,
             "weapon": "WarPick"
         },
         {
-            "min": "99",
-            "max": "100",
+            "min": 99,
+            "max": 100,
             "weapon": "Whip"
         }
     ]
