@@ -1,0 +1,553 @@
+{
+    "skills": [
+        {
+            "name": "Acrobatics",
+            "attribute": "DEX",
+            "description": "A character can roll beneath a closing gate, swing across a chasm on a rope, or hold their balance on a precarious ledge by passing an Acrobatics check."
+        },
+        {
+            "name": "AnimalHandling",
+            "attribute": "CHA",
+            "description": "Whena character wants to attempt to calm downadomesticatedanimal,intuit an animal's intentions, or even to control their mount when attemptingariskymaneuver,thisis theskilltheymustuse."
+        },
+        {
+            "name": "Athletics",
+            "attribute": "STR",
+            "description": "To undertake difficult feats of swimming, sprinting, climbing, or jumping, a character must make an Athletics check."
+        },
+        {
+            "name": "Command",
+            "attribute": "CHA",
+            "description": "This skill allowsacharactertotakecontrolof a group of soldiers and lead them into battle, or to arrange and organize an efficient group task, suchasaship'screw.Itdetermines how good a character is at commanding other characters that areundertheirorders."
+        },
+        {
+            "name": "Crafting",
+            "attribute": "DEX",
+            "description": "With this skill a character is able to fix or create small objects, like mending some leather boots, fixing a broken hilt, and any other task that doesn't require a very specialized knowledge. This general skill covers any sort of leather-working, bone-crafting,andcarpentry."
+        },
+        {
+            "name": "Dodge",
+            "attribute": "DEX",
+            "description": "Acharacter'sability to get out of the way, either during combatoroutofit.Thisskillisalso used when a character attempts to disengagefromameleefight."
+        },
+        {
+            "name": "Insight",
+            "attribute": "WIL",
+            "description": "A creature's objectives or motives can be deducedviaanInsightcheck."
+        },
+        {
+            "name": "Manipulation",
+            "attribute": "CHA",
+            "description": "With this skill a character can influence an NPC'sopinionoractions,eithervia a well-placed threat, lies or sheer flattery."
+        },
+        {
+            "name": "Martial Weapons",
+            "attribute": "STR",
+            "description": "This skill allows a character to wield weaponssuchasthebattelaxe,flail, glaive, greataxe, greatsword, lance, longsword, maul, morningstar, scimitar, shortsword, trident, war pick,warhammer,andwip."
+        },
+        {
+            "name": "Medicine",
+            "attribute": "INT",
+            "description": "In order to stabilize a dying person, treat or diagnose a sickness or poison, heal wounds, or establish the cause of death, a character must make a Medicinecheck."
+        },
+        {
+            "name": "Nature",
+            "attribute": "INT",
+            "description": "The character's understanding of natural terrains, monsters, plants, and threats is measured by the Nature skill. Unlike Survival, this skill does not involve practical experience with thenaturalworld."
+        },
+        {
+            "name": "Perception",
+            "attribute": "WIL",
+            "description": "Perception referstoacharacter'sabilitytosee, hear,orsensethings."
+        },
+        {
+            "name": "Performance",
+            "attribute": "CHA",
+            "description": "With a Performancecheck,acharactercan sing, act, or otherwise amuse an audience."
+        },
+        {
+            "name": "Ranged Weapons",
+            "attribute": "DEX",
+            "description": "The ability to wield ranged weapons in combat, such as any type of bow, throwing daggers, darts, and even throwingnets."
+        },
+        {
+            "name": "Sailing",
+            "attribute": "DEX",
+            "description": "A character's ability to properly tend to and navigate boats and vessels of any size."
+        },
+        {
+            "name": "SiegeWeapons",
+            "attribute": "DEX",
+            "description": "This skill determines a character's ability to wield the large weapons sometimes used by fortifications and larger vessels,suchasballistaeorcatapults."
+        },
+        {
+            "name": "Simple Melee Weapons",
+            "attribute": "STR",
+            "description": "This skill measures a character's ability to wield the following weapons: Club, dagger, greatclub, handaxe, javelin, mace, quarterstaff,andspear."
+        },
+        {
+            "name": "Sleight of Hand",
+            "attribute": "DEX",
+            "description": "To conduct legerdemain, pickpocket, hide an object on another person, make a secret hand signal, or otherwise trick the eyes with feats of dexterity, a character makes a SleightofHandcheck."
+        },
+        {
+            "name": "Stealth",
+            "attribute": "DEX",
+            "description": "Stealth is used to hide or avoid notice. A character's Stealthcheckisusuallyopposedby a potential observer's Perception check."
+        },
+        {
+            "name": "Survival",
+            "attribute": "INT",
+            "description": "This skill helps a character to undertake tasks like fishing, tracking, avoiding natural hazards, and traveling without becominglostintheOneSea."
+        }
+    ],
+    "talents": [
+        {
+            "name": "Aim",
+            "description": "For your next attack, add +30 to your Ranged Weapons skill and +1 damage if you spend a wholeroundaiming."
+        },
+        {
+            "name": "AncientSoul",
+            "description": "IncreaseyourPPby +5permanently."
+        },
+        {
+            "name": "Archery Expert",
+            "description": "Attacks made with ranged weapons ignore 2 pointsofarmor."
+        },
+        {
+            "name": "Backstab",
+            "description": "Double your attack damage when attacking an unsuspecting target with a one- handedmeleeweapon."
+        },
+        {
+            "name": "Brace",
+            "description": "Whenyoureceiveacritical hit, perform a successful Vitality check to avoid rolling on the Critical Hit table. You still receive doublethedamageasusualthough."
+        },
+        {
+            "name": "Brawler",
+            "description": "Your unarmed attacks dealD6damage."
+        },
+        {
+            "name": "Camouflage",
+            "description": "You automatically pass all Stealth checks when attempting to hide in natural terrain."
+        },
+        {
+            "name": "Controlled Breathing",
+            "description": "You can holdyourbreathforCONx2rounds."
+        },
+        {
+            "name": "Break Armor",
+            "description": "Perform a standard attack. If it hits, reduce thetarget'sarmorby1."
+        },
+        {
+            "name": "Charger",
+            "description": "+10 to your attack roll and +D4 damage when you charge intocombat."
+        },
+        {
+            "name": "Dauntless",
+            "description": "You are immune to Fear."
+        },
+        {
+            "name": "Dual Wielder",
+            "description": "You no longer suffer any penalty from wielding two one-handed weapons during combat."
+        },
+        {
+            "name": "Duelist",
+            "description": "+20 to your attack skill when wielding a one-handed weapon."
+        },
+        {
+            "name": "Elusive",
+            "description": "Your Dodge skill is reduced by -20 after each dodge attempted in the same round, insteadofby-30."
+        },
+        {
+            "name": "ExploitWeakSpot",
+            "description": "Your attacks ignore1pointofarmor."
+        },
+        {
+            "name": "Fast Swimmer",
+            "description": "Your swimming speedisDEXx3ft./round."
+        },
+        {
+            "name": "Frugal",
+            "description": "You only require one rationeachtwodays."
+        },
+        {
+            "name": "Gifted - Charisma",
+            "description": "You may re- rollanyfailedskilluprollsforskills associatedwithCHA."
+        },
+        {
+            "name": "Gifted - Dexterity",
+            "description": "You may re- rollanyfailedskilluprollsforskills associatedwithDEX."
+        },
+        {
+            "name": "Gifted-Intelligence",
+            "description": "Youmayre- rollanyfailedskilluprollsforskills associatedwithINT."
+        },
+        {
+            "name": "Gifted-Strength",
+            "description": "Youmayre-roll any failed skill up rolls for skills associatedwith STR."
+        },
+        {
+            "name": "Gifted-Will",
+            "description": "You may re-roll any failed skill up rolls for skills associatedwithWIL."
+        },
+        {
+            "name": "Haggler",
+            "description": "You will never receive less than the standard price when sellingyourloot."
+        },
+        {
+            "name": "Healer",
+            "description": "While tending to the wounds of others with the Medicine skill, triple their healing rate."
+        },
+        {
+            "name": "Inspiring Chant",
+            "description": "Once per combat, perform a Performance check.Ifyousucceed,youandyour allies receive +5 temporary Health Points. These extra HP dissipate at theendofcombat."
+        },
+        {
+            "name": "LeadtheFight",
+            "description": "Oncepercombat, perform a Command check. If successful, your allies receive +10 totheirattackrollsuntiltheendof combat."
+        },
+        {
+            "name": "Marksman",
+            "description": "+20 to your attack skillwhenusingarangedweapon."
+        },
+        {
+            "name": "MindFortress",
+            "description": "You'reimmuneto alltypesofmindcontrolorcharm."
+        },
+        {
+            "name": "Moon-Touched",
+            "description": "+20whenrolling ontheSpellEffecttable."
+        },
+        {
+            "name": "Multiple Attacks",
+            "description": "You can split your attack skill in two and perform a different attack with each resulting score in the same turn.Forexample,acharacterwith a Martial Weapons skill of 56 can choose to assign his first attack a score of 30 and the second one the remaining 26. In order to successfully hit, the character wouldhavetoperformaskillcheck as usual, once for each separate score."
+        },
+        {
+            "name": "MysticalStrike",
+            "description": "Youcanspendup to 5 PP to deal the same amount of extra damage when performing an attack."
+        },
+        {
+            "name": "Powerful",
+            "description": "Reduce a target's Tenacity score by -20 when attempting to resist one of your spells."
+        },
+        {
+            "name": "Quick-Handed",
+            "description": "+30 to your Sleight of Hand skill when performingacheck."
+        },
+        {
+            "name": "Quick Healer",
+            "description": "You recover 5 HP perdayofrest,insteadoftheusual3."
+        },
+        {
+            "name": "Resilient",
+            "description": "WhenreceivingaMajor Wound, perform a Vitality check. If successful, you can ignore the wound'seffects."
+        },
+        {
+            "name": "Silent",
+            "description": "+30 to your Stealth skill whenperformingacheck."
+        },
+        {
+            "name": "Slippery",
+            "description": "You can automatically disengage from combat without havingtoperformaDodgecheck."
+        },
+        {
+            "name": "Slayer",
+            "description": "+20 to your attack skill when wielding a two-handed weapon."
+        },
+        {
+            "name": "Snakeblood",
+            "description": "Increase your Vitality score by +30 when attempting to resist the effects of poisonorvenom."
+        },
+        {
+            "name": "Sorcerer",
+            "description": "Startthegameknowing an extra spell of your choice. Only new characters may pick this Talent."
+        },
+        {
+            "name": "Taunt",
+            "description": "Add +20 to your Manipulation skill and make a check. If successful, all human opponents within hearing range are forced to attack you on their nextturn."
+        },
+        {
+            "name": "TerrifyingVoice",
+            "description": "Add+20toyour Manipulation skill and make a check. If successful, your target must pass a Tenacity check or suffer the effects of Fear for D4 rounds."
+        },
+        {
+            "name": "Unstoppable",
+            "description": "After reducing an opponent to 0 HP, you can immediately perform a free attack againstthenearestopponent."
+        },
+        {
+            "name": "Vigorous",
+            "description": "IncreaseyourHPby+5 permanently."
+        },
+        {
+            "name": "Watchful",
+            "description": "+5 Initiative, you cannotbesurprised."
+        }
+    ],
+    "cults": [
+        {
+            "name": "The Thousand Tears",
+            "description": "a particularly violent group of Aphion worshippers"
+        },
+        {
+            "name": "Nirena's Emissaries",
+            "description": "a congregation that worships the Goddess of Death"
+        },
+        {
+            "name": "The Hallowed Creed",
+            "description": "zealots working to bring back Phenir, God of Justice"
+        },
+        {
+            "name": "TheGoldenOracle",
+            "description": "fanaticshopingtoresurrectQhanas,GodofMagic"
+        },
+        {
+            "name": "TheRedSky",
+            "description": "adoomsdaycultthatendlesslysacrificesvictimstoUara, GoddessoftheSky"
+        },
+        {
+            "name": "The Faded",
+            "description": "fanatics that consider humanity should have been exterminated"
+        },
+        {
+            "name": "The Silent Gathering",
+            "description": "a strange organization that worships Mantris, GoddessoftheNight"
+        },
+        {
+            "name": "The Bronze Children",
+            "description": "their skin covered in sunburns and tumors, worshippersofIrus,GodoftheSun"
+        },
+        {
+            "name": "The Broken",
+            "description": "followers of Ulies, God of Wind, attempting to bring him back"
+        },
+        {
+            "name": "The Last Order",
+            "description": "lost souls trying to interpret the last words of Kothe, GoddessofDuty"
+        }
+    ],
+    "why": [
+        "You'reafilthyheretic",
+        "Ourcauserequiresblood",
+        "Someone needs to man the galleys",
+        "Youmustknowsomething!",
+        "Youhadsomethingofvalue",
+        "Whoknowswhythesebastards choosetodoanything?"
+    ],
+    "length": [
+        "Aweek",
+        "Amonth",
+        "Threemonths",
+        "Sixmonths",
+        "Ayear"
+    ],
+    "escape": [
+        {
+            "means": "Iseducedamemberofthecrew",
+            "adjust": "+5Manipulation"
+        },
+        {
+            "means": "Ikilledmywayout",
+            "adjust": "+5UnarmedCombat"
+        },
+        {
+            "means": "IsawanopportunityandItookit",
+            "adjust": "+5Perception"
+        },
+        {
+            "means": "Icarefullycraftedaplanandexecutedit",
+            "adjust": "+5Insight"
+        },
+        {
+            "means": "Isnuckout;nobodyevenrealizedIwasgone",
+            "adjust": "+5Stealth"
+        },
+        {
+            "means": "Iplayeddeadandtheyforgotaboutme",
+            "adjust": "+5Performance"
+        },
+        {
+            "means": "Iusedmyskillsandmadeawayout",
+            "adjust": "+5Crafting"
+        },
+        {
+            "means": "Istartedarevolt",
+            "adjust": "+5Command"
+        }
+    ],
+    "steal": [
+        {
+            "object": "3D10shards",
+            "price": "Youlostafingerinthefightthough",
+            "attribute": "-1DEX"
+        },
+        {
+            "object": "Anenchantedweapon(rollontherandomweapontable)thatdealsan extra D4 damage",
+            "price": " You received a wound that doesn't really heal ",
+            "attribute": "-1 CON"
+        },
+        {
+            "object": "Amoonstonethatcanstoreupto10PP",
+            "price": "Yousufferedaterribleblowto thehead",
+            "attribute": "-1INT"
+        },
+        {
+            "object": "ARing of Waterlungs (can cast the Waterlungs spell 1/day)",
+            "price": " Your face wasslashed",
+            "attribute": "-1CHA"
+        },
+        {
+            "object": "ABracelet of Flaming Hand (can cast the Flaming Hand spell 1/day)",
+            "price": " YouarenowHuntedbythecult",
+            "attribute": null
+        },
+        {
+            "object": "ARing of Healing (can cast the Stitch Wound spell 1/day)",
+            "price": " You were prettywounded,startthegamehavinglost5HP",
+            "attribute": null
+        }
+    ],
+    "gear": [
+        "Backpack",
+        "Knife",
+        "Torches(UD4)",
+        "D4candles",
+        "D4emptyflasks",
+        "Fishingrod",
+        "Rope(40ft)",
+        "Tinderbox",
+        "Bandages(UD4)",
+        "D10Craftingsupplies"
+    ],
+    "weapons": [
+        {
+            "min": "1",
+            "max": "4",
+            "weapon": "Club"
+        },
+        {
+            "min": "5",
+            "max": "8",
+            "weapon": "Dagger"
+        },
+        {
+            "min": "9",
+            "max": "12",
+            "weapon": "Greatclub"
+        },
+        {
+            "min": "13",
+            "max": "16",
+            "weapon": "Handaxe"
+        },
+        {
+            "min": "17",
+            "max": "20",
+            "weapon": "Mace"
+        },
+        {
+            "min": "21",
+            "max": "24",
+            "weapon": "Quarterstaff"
+        },
+        {
+            "min": "25",
+            "max": "28",
+            "weapon": "Spear"
+        },
+        {
+            "min": "29",
+            "max": "32",
+            "weapon": "Bow"
+        },
+        {
+            "min": "33",
+            "max": "36",
+            "weapon": "Dart"
+        },
+        {
+            "min": "37",
+            "max": "40",
+            "weapon": "Javelin"
+        },
+        {
+            "min": "41",
+            "max": "44",
+            "weapon": "Net"
+        },
+        {
+            "min": "45",
+            "max": "50",
+            "weapon": "Sling"
+        },
+        {
+            "min": "51",
+            "max": "54",
+            "weapon": "ThrowingKnife"
+        },
+        {
+            "min": "55",
+            "max": "58",
+            "weapon": "Battleaxe"
+        },
+        {
+            "min": "59",
+            "max": "62",
+            "weapon": "Flail"
+        },
+        {
+            "min": "63",
+            "max": "66",
+            "weapon": "Glaive"
+        },
+        {
+            "min": "67",
+            "max": "70",
+            "weapon": "Greatsword"
+        },
+        {
+            "min": "71",
+            "max": "74",
+            "weapon": "Lance"
+        },
+        {
+            "min": "75",
+            "max": "78",
+            "weapon": "Longsword"
+        },
+        {
+            "min": "79",
+            "max": "82",
+            "weapon": "Maul"
+        },
+        {
+            "min": "83",
+            "max": "86",
+            "weapon": "Morningstar"
+        },
+        {
+            "min": "87",
+            "max": "90",
+            "weapon": "Scimitar"
+        },
+        {
+            "min": "91",
+            "max": "94",
+            "weapon": "Shortsword"
+        },
+        {
+            "min": "95",
+            "max": "96",
+            "weapon": "Trident"
+        },
+        {
+            "min": "97",
+            "max": "98",
+            "weapon": "WarPick"
+        },
+        {
+            "min": "99",
+            "max": "100",
+            "weapon": "Whip"
+        }
+    ]
+}
