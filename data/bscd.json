@@ -362,5 +362,27 @@
             "min": 99,
             "max": 100
         }
-    }
+    },
+    "spells": [
+        "Accelerate",
+        "Birdsight",
+        "CalmWind",
+        "CleanseCorruption",
+        "CloakofShadows",
+        "Clumsiness",
+        "CorruptWeapon",
+        "DispelSorcery",
+        "Drown",
+        "Enthrall",
+        "FlamingHand",
+        "HealMajorWound",
+        "PowerNexus",
+        "PurifyWater",
+        "StitchWound",
+        "Stun",
+        "SummonElemental",
+        "SummonMinorDemon",
+        "UnnaturalReflexes",
+        "Waterlungs"
+    ]
 }
