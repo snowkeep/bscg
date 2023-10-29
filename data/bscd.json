@@ -128,48 +128,18 @@
         "Vigorous": "IncreaseyourHPby+5 permanently.",
         "Watchful": "+5 Initiative, you cannotbesurprised."
     },
-    "cults": [
-        {
-            "name": "The Thousand Tears",
-            "description": "a particularly violent group of Aphion worshippers"
-        },
-        {
-            "name": "Nirena's Emissaries",
-            "description": "a congregation that worships the Goddess of Death"
-        },
-        {
-            "name": "The Hallowed Creed",
-            "description": "zealots working to bring back Phenir, God of Justice"
-        },
-        {
-            "name": "TheGoldenOracle",
-            "description": "fanaticshopingtoresurrectQhanas,GodofMagic"
-        },
-        {
-            "name": "TheRedSky",
-            "description": "adoomsdaycultthatendlesslysacrificesvictimstoUara, GoddessoftheSky"
-        },
-        {
-            "name": "The Faded",
-            "description": "fanatics that consider humanity should have been exterminated"
-        },
-        {
-            "name": "The Silent Gathering",
-            "description": "a strange organization that worships Mantris, GoddessoftheNight"
-        },
-        {
-            "name": "The Bronze Children",
-            "description": "their skin covered in sunburns and tumors, worshippersofIrus,GodoftheSun"
-        },
-        {
-            "name": "The Broken",
-            "description": "followers of Ulies, God of Wind, attempting to bring him back"
-        },
-        {
-            "name": "The Last Order",
-            "description": "lost souls trying to interpret the last words of Kothe, GoddessofDuty"
-        }
-    ],
+    "cults": {
+        "The Thousand Tears": "a particularly violent group of Aphion worshippers",
+        "Nirena's Emissaries": "a congregation that worships the Goddess of Death",
+        "The Hallowed Creed": "zealots working to bring back Phenir, God of Justice",
+        "TheGoldenOracle": "fanaticshopingtoresurrectQhanas,GodofMagic",
+        "TheRedSky": "adoomsdaycultthatendlesslysacrificesvictimstoUara, GoddessoftheSky",
+        "The Faded": "fanatics that consider humanity should have been exterminated",
+        "The Silent Gathering": "a strange organization that worships Mantris, GoddessoftheNight",
+        "The Bronze Children": "their skin covered in sunburns and tumors, worshippersofIrus,GodoftheSun",
+        "The Broken": "followers of Ulies, God of Wind, attempting to bring him back",
+        "The Last Order": "lost souls trying to interpret the last words of Kothe, GoddessofDuty"
+    },
     "why": [
         "You'reafilthyheretic",
         "Ourcauserequiresblood",
