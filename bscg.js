@@ -7,33 +7,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (g && (g = 0, op[0] && (_ = 0)), _) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
 function roll(dice) {
     /**
       * Emulates a dice roll.
@@ -52,32 +25,27 @@ function rollStat() {
     return roll(6) + roll(6) + roll(6);
 }
 function getBSJson() {
-    return __awaiter(this, void 0, void 0, function () {
-        var url, resp, _a, _b;
-        return __generator(this, function (_c) {
-            switch (_c.label) {
-                case 0:
-                    url = "https://raw.githubusercontent.com/snowkeep/bscg/main/data/bscd.json";
-                    return [4 /*yield*/, fetch(url, { cache: "reload" })];
-                case 1:
-                    resp = _c.sent();
-                    _b = (_a = JSON).parse;
-                    return [4 /*yield*/, resp.text()];
-                case 2: return [2 /*return*/, _b.apply(_a, [_c.sent()])];
-            }
-        });
+    return __awaiter(this, void 0, void 0, function* () {
+        /**
+          * Fetches the Broken Shores character json from github
+          *
+          * @returns text promise
+          **/
+        const url = "https://raw.githubusercontent.com/snowkeep/bscg/main/data/bscd.json";
+        // TODO: remove reload in production
+        let resp = yield fetch(url, { cache: "reload" });
+        return JSON.parse(yield resp.text());
     });
 }
 function shuffleList(array) {
-    var _a;
     /**
       * Shuffles a list
       *
       * @returns a list
       **/
-    for (var i = array.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        _a = [array[j], array[i]], array[i] = _a[0], array[j] = _a[1];
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
     }
     return array;
 }
@@ -90,124 +58,137 @@ function getRandomfromList(arr) {
 ;
 ;
 function genChar() {
-    return __awaiter(this, void 0, void 0, function () {
-        var stats, chpMod, numSpells, bsdata, skills, sixty, _, forty, _, twenty, _, ten, mySkills, name_1, mySpells, spells, i, talents, myTalents, i, notes, escape, myWeapons, myItems, myNEItems, stole, wealth, rations, ally, wn, attribs;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    stats = {
-                        str: rollStat(),
-                        dex: rollStat(),
-                        con: rollStat(),
-                        wil: rollStat(),
-                        int: rollStat(),
-                        cha: rollStat()
-                    };
-                    chpMod = 0;
-                    numSpells = roll(3) - 1;
-                    return [4 /*yield*/, getBSJson()];
-                case 1:
-                    bsdata = _a.sent();
-                    skills = shuffleList(Object.keys(bsdata["skills"]));
-                    sixty = skills.shift();
-                    bsdata["skills"][sixty]["score"] = 60;
-                    // three skills get +40
-                    for (_ = 0; _ < 3; _++) {
-                        forty = skills.shift();
-                        bsdata["skills"][forty]["score"] = 40;
-                    }
-                    // 5 minus the number of starting spells get +20
-                    for (_ = 0; _ < 5 - numSpells; _++) {
-                        twenty = skills.shift();
-                        bsdata["skills"][twenty]["score"] = 20;
-                    }
-                    // two skills get +10
-                    for (_ = 0; _ < 2; _++) {
-                        ten = skills.shift();
-                        bsdata["skills"][ten]["score"] = 10;
-                    }
-                    // rest of the skills get 0
-                    skills.forEach(function (name) { bsdata["skills"][name]["score"] = 0; });
-                    mySkills = [];
-                    for (name_1 in bsdata["skills"]) {
-                        mySkills.push({ name: name_1, value: bsdata["skills"][name_1]["score"] });
-                    }
-                    mySpells = [];
-                    if (numSpells > 0) {
-                        spells = shuffleList(bsdata["spells"]);
-                        for (i = 0; i < numSpells; i++) {
-                            mySpells.push({ name: spells[i], idiosyncracy: getRandomfromList(bsdata["idiosyncracies"]) });
-                        }
-                    }
-                    talents = shuffleList(Object.keys(bsdata["talents"]));
-                    myTalents = [];
-                    for (i = 0; i < 2; i++) {
-                        myTalents.push("".concat(talents[i], " - ").concat(bsdata["talents"][talents[i]]));
-                    }
-                    notes = [];
-                    notes.push("Captured by ".concat(getRandomfromList(Object.keys(bsdata["cults"])), " because ").concat(getRandomfromList(bsdata["why"]), "."));
-                    escape = getRandomfromList(bsdata["escape"]);
-                    notes.push("After ".concat(getRandomfromList(bsdata["length"]).toLowerCase(), ", ").concat(escape["means"], "."));
-                    myWeapons = [];
-                    myItems = [];
-                    myNEItems = [];
-                    if (getRandomfromList([true, false])) {
-                        stole = getRandomfromList(Object.keys(bsdata["steal"]));
-                        if (bsdata["steal"][stole]["encumbering"]) {
-                            myItems.push(stole);
-                        }
-                        else {
-                            myNEItems.push(stole);
-                        }
-                        notes.push("You stole ".concat(stole, " from the cult.  ").concat(bsdata["steal"][stole]["price"], "."));
-                        // TODO: adjust attribute fron theft
-                    }
-                    wealth = roll(20) + roll(20) + roll(20) + roll(20) + roll(20);
-                    rations = roll(4) + 6;
-                    ally = getRandomfromList([true, false]);
-                    if (ally) {
-                        notes.push("You freed an ally during your escape");
-                        wealth -= 20;
-                        rations -= 1;
-                        ally = true;
-                    }
-                    wn = roll(100);
-                    Object.keys(bsdata["weapons"]).forEach(function (weapon) {
-                        if ((wn >= bsdata["weapons"][weapon]["min"]) && (wn <= bsdata["weapons"][weapon]["max"])) {
-                            myWeapons.push({ name: weapon, wtype: "foo", damage: "bar" });
-                        }
-                    });
-                    // gear
-                    myItems.push(getRandomfromList(bsdata["gear"]));
-                    attribs = {
-                        brawn: stats.str * 5,
-                        coordination: stats.dex * 5,
-                        vitality: stats.con * 5,
-                        tenacity: stats.wil * 5,
-                        intellect: stats.int * 5,
-                        charm: stats.cha * 5
-                    };
-                    return [2 /*return*/, {
-                            hp: stats.con * 2,
-                            chp: stats.con * 2 - chpMod,
-                            pp: stats.wil,
-                            speed_walk: stats.dex * 2,
-                            speed_run: stats.dex * 4,
-                            stats: stats,
-                            attributes: attribs,
-                            skills: mySkills,
-                            talents: myTalents,
-                            weapons: myWeapons,
-                            wealth: wealth,
-                            slots: stats.str + 10,
-                            items: myItems,
-                            neitems: myNEItems,
-                            spells: mySpells,
-                            ally: ally,
-                            notes: notes
-                        }];
+    return __awaiter(this, void 0, void 0, function* () {
+        /**
+          * Generates character information
+          *
+          * @return bsCharacter
+          **/
+        let stats = {
+            str: rollStat(),
+            dex: rollStat(),
+            con: rollStat(),
+            wil: rollStat(),
+            int: rollStat(),
+            cha: rollStat()
+        };
+        // modified for starting hit points
+        let chpMod = 0;
+        // determine the number of starting spells
+        let numSpells = roll(3) - 1;
+        // get the character data json
+        let bsdata = yield getBSJson();
+        // shuffle the skill list
+        let skills = shuffleList(Object.keys(bsdata["skills"]));
+        // one skill gets +60
+        let sixty = skills.shift();
+        bsdata["skills"][sixty]["score"] = 60;
+        // three skills get +40
+        for (let _ = 0; _ < 3; _++) {
+            let forty = skills.shift();
+            bsdata["skills"][forty]["score"] = 40;
+        }
+        // 5 minus the number of starting spells get +20
+        for (let _ = 0; _ < 5 - numSpells; _++) {
+            let twenty = skills.shift();
+            bsdata["skills"][twenty]["score"] = 20;
+        }
+        // two skills get +10
+        for (let _ = 0; _ < 2; _++) {
+            let ten = skills.shift();
+            bsdata["skills"][ten]["score"] = 10;
+        }
+        // rest of the skills get 0
+        skills.forEach((name) => { bsdata["skills"][name]["score"] = 0; });
+        // set the skills
+        let mySkills = [];
+        for (const name in bsdata["skills"]) {
+            mySkills.push({ name: name, value: bsdata["skills"][name]["score"] });
+        }
+        // TODO : spell details
+        let mySpells = [];
+        if (numSpells > 0) {
+            const spells = shuffleList(bsdata["spells"]);
+            for (let i = 0; i < numSpells; i++) {
+                mySpells.push({ name: spells[i], idiosyncracy: getRandomfromList(bsdata["idiosyncracies"]) });
+            }
+        }
+        // talents
+        const talents = shuffleList(Object.keys(bsdata["talents"]));
+        let myTalents = [];
+        for (let i = 0; i < 2; i++) {
+            myTalents.push(`${talents[i]} - ${bsdata["talents"][talents[i]]}`);
+        }
+        // TODO - any stat adjustments from the talents
+        // cult info
+        let notes = [];
+        notes.push(`Captured by ${getRandomfromList(Object.keys(bsdata["cults"]))} because ${getRandomfromList(bsdata["why"])}.`);
+        const escape = getRandomfromList(bsdata["escape"]);
+        notes.push(`After ${getRandomfromList(bsdata["length"]).toLowerCase()}, ${escape["means"]}.`);
+        // TODO: adjustment skill from escape
+        // do we steal something from the cult?
+        let myWeapons = [];
+        let myItems = [];
+        let myNEItems = [];
+        if (getRandomfromList([true, false])) {
+            const stole = getRandomfromList(Object.keys(bsdata["steal"]));
+            if (bsdata["steal"][stole]["encumbering"]) {
+                myItems.push(stole);
+            }
+            else {
+                myNEItems.push(stole);
+            }
+            notes.push(`You stole ${stole} from the cult.  ${bsdata["steal"][stole]["price"]}.`);
+            // TODO: adjust attribute fron theft
+        }
+        // starting coins and ally?
+        let wealth = roll(20) + roll(20) + roll(20) + roll(20) + roll(20);
+        let rations = roll(4) + 6;
+        let ally = getRandomfromList([true, false]);
+        if (ally) {
+            notes.push(`You freed an ally during your escape`);
+            wealth -= 20;
+            rations -= 1;
+            ally = true;
+        }
+        // weapon
+        // TODO: make a function in case we steal a magic weapon
+        const wn = roll(100);
+        Object.keys(bsdata["weapons"]).forEach((weapon) => {
+            if ((wn >= bsdata["weapons"][weapon]["min"]) && (wn <= bsdata["weapons"][weapon]["max"])) {
+                myWeapons.push({ name: weapon, wtype: "foo", damage: "bar" });
             }
         });
+        // gear
+        myItems.push(getRandomfromList(bsdata["gear"]));
+        // derived values - go last because some of the above adjust stats
+        let attribs = {
+            brawn: stats.str * 5,
+            coordination: stats.dex * 5,
+            vitality: stats.con * 5,
+            tenacity: stats.wil * 5,
+            intellect: stats.int * 5,
+            charm: stats.cha * 5
+        };
+        return {
+            hp: stats.con * 2,
+            chp: stats.con * 2 - chpMod,
+            pp: stats.wil,
+            speed_walk: stats.dex * 2,
+            speed_run: stats.dex * 4,
+            stats: stats,
+            attributes: attribs,
+            skills: mySkills,
+            talents: myTalents,
+            weapons: myWeapons,
+            wealth: wealth,
+            slots: stats.str + 10,
+            items: myItems,
+            neitems: myNEItems,
+            spells: mySpells,
+            ally: ally,
+            notes: notes
+        };
     });
 }
 /*
@@ -264,4 +245,4 @@ function genHTML() {
 }
 */
 //genChar();
-genChar().then(function (res) { return console.log(res); });
+genChar().then((res) => console.log(res));
