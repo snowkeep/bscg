@@ -192,27 +192,33 @@
     "steal": {
         "3D10shards": {
             "price": "Youlostafingerinthefightthough",
-            "attribute": "-1DEX"
+            "reduce": "-1DEX",
+            "encumbering": true
         },
         "Anenchantedweapon(rollontherandomweapontable)thatdealsan extra D4 damage": {
             "price": " You received a wound that doesn't really heal ",
-            "attribute": "-1 CON"
+            "reduce": "-1 CON",
+            "encumbering": false
         },
         "Amoonstonethatcanstoreupto10PP": {
             "price": "Yousufferedaterribleblowto thehead",
-            "attribute": "-1INT"
+            "reduce": "-1INT",
+            "encumbering": true
         },
         "ARing of Waterlungs (can cast the Waterlungs spell 1/day)": {
             "price": " Your face wasslashed",
-            "attribute": "-1CHA"
+            "reduce": "-1CHA",
+            "encumbering": false
         },
         "ABracelet of Flaming Hand (can cast the Flaming Hand spell 1/day)": {
             "price": " YouarenowHuntedbythecult",
-            "attribute": null
+            "reduce": null,
+            "encumbering": false
         },
         "ARing of Healing (can cast the Stitch Wound spell 1/day)": {
             "price": " You were prettywounded,startthegamehavinglost5HP",
-            "attribute": null
+            "reduce": "-5 HP",
+            "encumbering": false
         }
     },
     "gear": [

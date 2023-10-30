@@ -140,20 +140,28 @@ for sk in parts[stealstart+3:-1]:
             tokens = constr.split(".")
             tokens2 = tokens[1].split("(")
             if len(tokens2) > 1:
-                attr = tokens2[1].removesuffix(")")
+                red = tokens2[1].removesuffix(")")
             else:
-                attr = None
-            data["steal"][tokens[0]] =  {"price": tokens2[0], "attribute": attr}
+                red = None
+            if "shards" in tokens[0] or "moonstone" in tokens[0]:
+                encumbering = True
+            else:
+                encumbering = False
+
+            data["steal"][tokens[0]] =  {"price": tokens2[0], "reduce": red, "encumbering": encumbering}
             constr = ""
     else:
         constr = constr + sk
 tokens = constr.split(".")
 tokens2 = tokens[1].split("(")
 if len(tokens2) > 1:
-    attr = tokens2[1].removesuffix(")")
+    red = tokens2[1].removesuffix(")")
+# explicit put the HP drop for ring of healing
+elif tokens2[0].endswith("HP"):
+    red = "-5 HP"
 else:
-    attr = None
-data["steal"][tokens[0]] =  {"price": tokens2[0], "attribute": attr}
+    red = None
+data["steal"][tokens[0]] =  {"price": tokens2[0], "reduce": red, "encumbering": False}
 
 # gear
 data["gear"] = []

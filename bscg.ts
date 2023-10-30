@@ -115,8 +115,10 @@ async function genChar() : Promise<BSCharacter> {
     cha: rollStat()
   };
 
-  // modified for starting hit points
+  // modifiers based on picks
+  let hpMod = 0;
   let chpMod = 0;
+  let ppMod = 0;
 
   // determine the number of starting spells
   let numSpells = roll(3) - 1;
@@ -152,16 +154,10 @@ async function genChar() : Promise<BSCharacter> {
   // rest of the skills get 0
   skills.forEach((name) => { bsdata["skills"][name]["score"] = 0; })
 
-  // set the skills
-  let mySkills:charSkill[] = [];
-  for (const name in bsdata["skills"]) {
-    mySkills.push({name: name, value: bsdata["skills"][name]["score"]});
-  }
-
   // TODO : spell details
   let mySpells:charSpell[] = [];
+  const spells = shuffleList(bsdata["spells"]);
   if (numSpells > 0) {
-    const spells = shuffleList(bsdata["spells"]);
     for (let i = 0; i < numSpells; i++) {
       mySpells.push({name: spells[i], idiosyncracy: getRandomfromList(bsdata["idiosyncracies"]) });
     }
@@ -171,16 +167,39 @@ async function genChar() : Promise<BSCharacter> {
   const talents = shuffleList(Object.keys(bsdata["talents"]));
   let myTalents:string[] = [];
   for (let i = 0; i < 2; i++) {
-    myTalents.push(`${ talents[i] } - ${ bsdata["talents"][talents[i]] }`)
+    const talent = talents[i];
+    myTalents.push(`${ talent } - ${ bsdata["talents"][talent] }`)
+    // stat adjustments from the talents
+    // there are only 6 that adjust so hardcoding because they're all different - tough to abstract
+    switch(talent) {
+      case "Ancient Soul":
+        ppMod += 5;
+        break;
+      case "Marksman":
+        bsdata["skills"]["Ranged Weapons"]["score"] += 20;
+        break;
+      case "Quick-Handed":
+        bsdata["skills"]["Sleight of Hand"]["score"] += 30;
+        break;
+      case "Silent":
+        bsdata["skills"]["Stealth"]["score"] += 30;
+        break;
+      case "Sorcerer":
+        mySpells.push({name: spells[numSpells], idiosyncracy: getRandomfromList(bsdata["idiosyncracies"]) });
+        break;
+      case "Vigorous":
+        hpMod += 5;
+        break;
+    };
   }
-  // TODO - any stat adjustments from the talents
 
   // cult info
   let notes:string[] = [];
   notes.push(`Captured by ${ getRandomfromList(Object.keys(bsdata["cults"])) } because ${ getRandomfromList(bsdata["why"]) }.`);
   const escape = getRandomfromList(bsdata["escape"]);
   notes.push(`After ${ getRandomfromList(bsdata["length"]).toLowerCase() }, ${ escape["means"] }.`);
-  // TODO: adjustment skill from escape
+  // adjust skill based on escape method
+  bsdata["skills"][escape["adjust"].replace("+5", "")]["score"] += 5;
 
   // do we steal something from the cult?
   let myWeapons: charWeapon[] = [];
@@ -189,12 +208,23 @@ async function genChar() : Promise<BSCharacter> {
   if (getRandomfromList([true, false])) {
     const stole = getRandomfromList(Object.keys(bsdata["steal"]));
     if (bsdata["steal"][stole]["encumbering"]) {
-      myItems.push(stole);
+      if (stole.slice(0,3) == "3D10") {
+        myItems.push(`Shards (${ roll(10) + roll(10) + roll(10)})`);
+      } else {
+        myItems.push(stole);
+      }
     } else {
       myNEItems.push(stole);
     }
     notes.push(`You stole ${ stole } from the cult.  ${ bsdata["steal"][stole]["price"] }.`);
-    // TODO: adjust attribute fron theft
+    // reducing from stealing
+    if (stole["reduce"].slice(0,1) == "-1") {
+      const redStat = stole["reduce"].slice(-3).toLowerCase();
+      console.log(`Reducing ${ redStat } by 1 because of theft.`);
+      stats[redStat] -= 1;
+    } else if (stole["reduce"] == "-5 HP") {
+      chpMod -= 5;
+    }
   }
 
   // starting coins and ally?
@@ -220,7 +250,6 @@ async function genChar() : Promise<BSCharacter> {
   // gear
   myItems.push(getRandomfromList(bsdata["gear"]));
 
-
   // derived values - go last because some of the above adjust stats
   let attribs:charAttr = {
     brawn:        stats.str * 5,
@@ -231,22 +260,28 @@ async function genChar() : Promise<BSCharacter> {
     charm:        stats.cha * 5
   };
 
+  // set the skills -  after any adjusts
+  let mySkills:charSkill[] = [];
+  for (const name in bsdata["skills"]) {
+    mySkills.push({name: name, value: bsdata["skills"][name]["score"]});
+  }
+
   return {
-    hp:         stats.con * 2,
-    chp:        stats.con * 2 - chpMod,
-    pp:         stats.wil,
+    hp:         stats.con * 2 + hpMod,
+    chp:        stats.con * 2 + chpMod + hpMod,
+    pp:         stats.wil + ppMod,
     speed_walk: stats.dex * 2,
     speed_run:  stats.dex * 4,
     stats:      stats,
     attributes: attribs,
     skills:     mySkills,
     talents:    myTalents,
-    weapons: myWeapons,
-    wealth: wealth,
-    slots: stats.str + 10,
-    items: myItems,
-    neitems: myNEItems,
-    spells: mySpells,
+    weapons:    myWeapons,
+    wealth:     wealth,
+    slots:      stats.str + 10,
+    items:      myItems,
+    neitems:    myNEItems,
+    spells:     mySpells,
 
     ally: ally,
     notes: notes

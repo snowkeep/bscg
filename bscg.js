@@ -72,8 +72,10 @@ function genChar() {
             int: rollStat(),
             cha: rollStat()
         };
-        // modified for starting hit points
+        // modifiers based on picks
+        let hpMod = 0;
         let chpMod = 0;
+        let ppMod = 0;
         // determine the number of starting spells
         let numSpells = roll(3) - 1;
         // get the character data json
@@ -100,15 +102,10 @@ function genChar() {
         }
         // rest of the skills get 0
         skills.forEach((name) => { bsdata["skills"][name]["score"] = 0; });
-        // set the skills
-        let mySkills = [];
-        for (const name in bsdata["skills"]) {
-            mySkills.push({ name: name, value: bsdata["skills"][name]["score"] });
-        }
         // TODO : spell details
         let mySpells = [];
+        const spells = shuffleList(bsdata["spells"]);
         if (numSpells > 0) {
-            const spells = shuffleList(bsdata["spells"]);
             for (let i = 0; i < numSpells; i++) {
                 mySpells.push({ name: spells[i], idiosyncracy: getRandomfromList(bsdata["idiosyncracies"]) });
             }
@@ -117,15 +114,39 @@ function genChar() {
         const talents = shuffleList(Object.keys(bsdata["talents"]));
         let myTalents = [];
         for (let i = 0; i < 2; i++) {
-            myTalents.push(`${talents[i]} - ${bsdata["talents"][talents[i]]}`);
+            const talent = talents[i];
+            myTalents.push(`${talent} - ${bsdata["talents"][talent]}`);
+            // stat adjustments from the talents
+            // there are only 6 that adjust so hardcoding because they're all different - tough to abstract
+            switch (talent) {
+                case "Ancient Soul":
+                    ppMod = 5;
+                    break;
+                case "Marksman":
+                    bsdata["skills"]["Ranged Weapons"]["score"] += 20;
+                    break;
+                case "Quick-Handed":
+                    bsdata["skills"]["Sleight of Hand"]["score"] += 20;
+                    break;
+                case "Silent":
+                    bsdata["skills"]["Stealth"]["score"] += 20;
+                    break;
+                case "Sorcerer":
+                    mySpells.push({ name: spells[numSpells], idiosyncracy: getRandomfromList(bsdata["idiosyncracies"]) });
+                    break;
+                case "Vigorous":
+                    hpMod = 5;
+                    break;
+            }
+            ;
         }
-        // TODO - any stat adjustments from the talents
         // cult info
         let notes = [];
         notes.push(`Captured by ${getRandomfromList(Object.keys(bsdata["cults"]))} because ${getRandomfromList(bsdata["why"])}.`);
         const escape = getRandomfromList(bsdata["escape"]);
         notes.push(`After ${getRandomfromList(bsdata["length"]).toLowerCase()}, ${escape["means"]}.`);
-        // TODO: adjustment skill from escape
+        // adjust skill based on escape method
+        bsdata["skills"][escape["adjust"].replace("+5", "")]["score"] += 5;
         // do we steal something from the cult?
         let myWeapons = [];
         let myItems = [];
@@ -170,10 +191,15 @@ function genChar() {
             intellect: stats.int * 5,
             charm: stats.cha * 5
         };
+        // set the skills -  after any adjusts
+        let mySkills = [];
+        for (const name in bsdata["skills"]) {
+            mySkills.push({ name: name, value: bsdata["skills"][name]["score"] });
+        }
         return {
-            hp: stats.con * 2,
-            chp: stats.con * 2 - chpMod,
-            pp: stats.wil,
+            hp: stats.con * 2 + hpMod,
+            chp: stats.con * 2 + chpMod + hpMod,
+            pp: stats.wil + ppMod,
             speed_walk: stats.dex * 2,
             speed_run: stats.dex * 4,
             stats: stats,
