@@ -212,7 +212,7 @@
         },
         "ABracelet of Flaming Hand (can cast the Flaming Hand spell 1/day)": {
             "price": " YouarenowHuntedbythecult",
-            "reduce": null,
+            "reduce": "",
             "encumbering": false
         },
         "ARing of Healing (can cast the Stitch Wound spell 1/day)": {

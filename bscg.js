@@ -78,6 +78,7 @@ function genChar() {
         let ppMod = 0;
         // determine the number of starting spells
         let numSpells = roll(3) - 1;
+        console.log(`Taking ${numSpells} spells and  ${5 - numSpells} +20 skills`);
         // get the character data json
         let bsdata = yield getBSJson();
         // shuffle the skill list
@@ -120,22 +121,28 @@ function genChar() {
             // there are only 6 that adjust so hardcoding because they're all different - tough to abstract
             switch (talent) {
                 case "Ancient Soul":
-                    ppMod = 5;
+                    console.log("Modifying PP for Ancient Soul talent");
+                    ppMod += 5;
                     break;
                 case "Marksman":
+                    console.log("Modifying Ranged Weapons for Marksman talent");
                     bsdata["skills"]["Ranged Weapons"]["score"] += 20;
                     break;
                 case "Quick-Handed":
-                    bsdata["skills"]["Sleight of Hand"]["score"] += 20;
+                    console.log("Modifying Sleigt of Hand for Quick-Handed talent");
+                    bsdata["skills"]["Sleight of Hand"]["score"] += 30;
                     break;
                 case "Silent":
-                    bsdata["skills"]["Stealth"]["score"] += 20;
+                    console.log("Modifying Stealth for Silent talent");
+                    bsdata["skills"]["Stealth"]["score"] += 30;
                     break;
                 case "Sorcerer":
+                    console.log("Adding spell for Sorcerer talent");
                     mySpells.push({ name: spells[numSpells], idiosyncracy: getRandomfromList(bsdata["idiosyncracies"]) });
                     break;
                 case "Vigorous":
-                    hpMod = 5;
+                    console.log("Modifying HP for Vigorous talent");
+                    hpMod += 5;
                     break;
             }
             ;
@@ -154,13 +161,26 @@ function genChar() {
         if (getRandomfromList([true, false])) {
             const stole = getRandomfromList(Object.keys(bsdata["steal"]));
             if (bsdata["steal"][stole]["encumbering"]) {
-                myItems.push(stole);
+                if (stole.slice(0, 3) == "3D10") {
+                    myItems.push(`Shards (${roll(10) + roll(10) + roll(10)})`);
+                }
+                else {
+                    myItems.push(stole);
+                }
             }
             else {
                 myNEItems.push(stole);
             }
             notes.push(`You stole ${stole} from the cult.  ${bsdata["steal"][stole]["price"]}.`);
-            // TODO: adjust attribute fron theft
+            // reducing from stealing
+            if (stole["reduce"].slice(0, 1) == "-1") {
+                const redStat = stole["reduce"].slice(-3).toLowerCase();
+                console.log(`Reducing ${redStat} by 1 because of theft.`);
+                stats[redStat] -= 1;
+            }
+            else if (stole["reduce"] == "-5 HP") {
+                chpMod -= 5;
+            }
         }
         // starting coins and ally?
         let wealth = roll(20) + roll(20) + roll(20) + roll(20) + roll(20);

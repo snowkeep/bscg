@@ -122,6 +122,7 @@ async function genChar() : Promise<BSCharacter> {
 
   // determine the number of starting spells
   let numSpells = roll(3) - 1;
+  console.log(`Taking ${ numSpells } spells and  ${ 5 - numSpells } +20 skills`);
 
   // get the character data json
   let bsdata = await getBSJson();
@@ -173,21 +174,27 @@ async function genChar() : Promise<BSCharacter> {
     // there are only 6 that adjust so hardcoding because they're all different - tough to abstract
     switch(talent) {
       case "Ancient Soul":
+        console.log("Modifying PP for Ancient Soul talent");
         ppMod += 5;
         break;
       case "Marksman":
+        console.log("Modifying Ranged Weapons for Marksman talent");
         bsdata["skills"]["Ranged Weapons"]["score"] += 20;
         break;
       case "Quick-Handed":
+        console.log("Modifying Sleigt of Hand for Quick-Handed talent");
         bsdata["skills"]["Sleight of Hand"]["score"] += 30;
         break;
       case "Silent":
+        console.log("Modifying Stealth for Silent talent");
         bsdata["skills"]["Stealth"]["score"] += 30;
         break;
       case "Sorcerer":
+        console.log("Adding spell for Sorcerer talent");
         mySpells.push({name: spells[numSpells], idiosyncracy: getRandomfromList(bsdata["idiosyncracies"]) });
         break;
       case "Vigorous":
+        console.log("Modifying HP for Vigorous talent");
         hpMod += 5;
         break;
     };

@@ -142,7 +142,7 @@ for sk in parts[stealstart+3:-1]:
             if len(tokens2) > 1:
                 red = tokens2[1].removesuffix(")")
             else:
-                red = None
+                red = ""
             if "shards" in tokens[0] or "moonstone" in tokens[0]:
                 encumbering = True
             else:
@@ -160,7 +160,8 @@ if len(tokens2) > 1:
 elif tokens2[0].endswith("HP"):
     red = "-5 HP"
 else:
-    red = None
+    red = ""
+
 data["steal"][tokens[0]] =  {"price": tokens2[0], "reduce": red, "encumbering": False}
 
 # gear
