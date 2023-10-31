@@ -215,7 +215,7 @@ async function genChar() : Promise<BSCharacter> {
   let myItems: string[] = [];
   let myNEItems: string[] = [];
   if (getRandomfromList([true, false])) {
-    const stole = getRandomfromList(Object.keys(bsdata["steal"]));
+    const stole: string = getRandomfromList(Object.keys(bsdata["steal"]));
     if (bsdata["steal"][stole]["encumbering"]) {
       if (stole.slice(0,3) == "3D10") {
         myItems.push(`Shards (${ roll(10) + roll(10) + roll(10)})`);
@@ -227,12 +227,14 @@ async function genChar() : Promise<BSCharacter> {
     }
     notes.push(`You stole ${ stole } from the cult.  ${ bsdata["steal"][stole]["price"] }.`);
     // reducing from stealing
-    if (stole["reduce"].slice(0,1) == "-1") {
+    const red = bsdata["steal"][stole]["reduce"];
+    if (red.slice(0,1) == "-1") {
       const redStat = stole["reduce"].slice(-3).toLowerCase();
       console.log(`Reducing ${ redStat } by 1 because of theft.`);
       stats[redStat] -= 1;
-    } else if (stole["reduce"] == "-5 HP") {
+    } else if (red == "-5 HP") {
       chpMod -= 5;
+      console.log(`Reducing starting HP by 5 because of theft.`);
     }
   }
 
