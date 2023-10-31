@@ -15,6 +15,32 @@ def visitor_body(text, cm, tm, font_dict, font_size):
     if y > 20 and y < 570 and text:
         parts.append(text.replace(u"\ufffd", "f").replace(u"\u2019", "'").replace(u"\u2013", "-"))
 
+def mergeWeapons(wtable: list[str], wtype: str) -> list[list[str]]:
+    """ handle the multi-row weapons tables - some very book-specific code """
+    new = []
+    i = 0
+
+    while i < len(wtable):
+        if (wtable[i][0] == "D" and wtable[i][-1].isdigit()) or wtable[i][-1] == "," or wtable[i].endswith("per") or wtable[i] == "Throwing":
+            new.append(" ".join(wtable[i:i+2]))
+            i += 1
+        elif wtable[i] == "Target":
+            new.append(" ".join(wtable[i:i+3]))
+            i += 2
+        else:
+            new.append(wtable[i])
+
+        i += 1
+
+    columns = 6
+    retDat = {}
+    for l in ([new[i:i + columns] for i in range(0, len(new), columns)][1:]):
+        l.append(wtype)
+        retDat[l[0]] = {"cost": l[1], "damage": l[2], "parry": l[3], "weight": l[4], "notes": l[5], "type": wtype}
+
+    return retDat
+
+
 data = {}
 
 # skills
@@ -190,6 +216,25 @@ for sk in parts[2:]:
         break
     else:
         data["weapons"][sk] = {"min": int(min), "max": int(max)}
+
+# weapon details
+parts = []
+page = reader.pages[110-1]
+page.extract_text(visitor_text=visitor_body)
+parts = list(filter("\n".__ne__, parts))
+splitType = parts.index("MffffffMffffWffffff")
+wdata = mergeWeapons(parts[1:splitType], "simple melee")
+wdata |= mergeWeapons(parts[splitType+1:], "martial melee")
+
+parts = []
+page = reader.pages[111-1]
+page.extract_text(visitor_text=visitor_body)
+parts = list(filter("\n".__ne__, parts))
+wdata |= mergeWeapons(parts[1:], "ranged")
+
+for weapon, dat in wdata.items():
+    # drop space to match the missing space parsed from the rolling table
+    data["weapons"][weapon.replace(" ", "")] |= dat
 
 # spells
 # TODO: get spell details

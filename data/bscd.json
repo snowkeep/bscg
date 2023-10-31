@@ -236,107 +236,263 @@
     "weapons": {
         "Club": {
             "min": 1,
-            "max": 4
+            "max": 4,
+            "cost": " 5",
+            "damage": "D6Bludgeoning",
+            "parry": " Yes",
+            "weight": "Normal",
+            "notes": " -",
+            "type": "simple melee"
         },
         "Dagger": {
             "min": 5,
-            "max": 8
+            "max": 8,
+            "cost": " 35",
+            "damage": "D4+1Piercing",
+            "parry": " No",
+            "weight": "Light",
+            "notes": " Fast",
+            "type": "simple melee"
         },
         "Greatclub": {
             "min": 9,
-            "max": 12
+            "max": 12,
+            "cost": " 15",
+            "damage": "D8Bludgeoning",
+            "parry": " Yes",
+            "weight": "Heavy",
+            "notes": " -",
+            "type": "simple melee"
         },
         "Handaxe": {
             "min": 13,
-            "max": 16
+            "max": 16,
+            "cost": " 35",
+            "damage": "D6+1Slashing",
+            "parry": " No",
+            "weight": "Normal",
+            "notes": " -",
+            "type": "simple melee"
         },
         "Mace": {
             "min": 17,
-            "max": 20
+            "max": 20,
+            "cost": " 50",
+            "damage": "D6+1 Bludgeoning",
+            "parry": "Yes",
+            "weight": "Normal",
+            "notes": " -",
+            "type": "simple melee"
         },
         "Quarterstaff": {
             "min": 21,
-            "max": 24
+            "max": 24,
+            "cost": " 5",
+            "damage": "D8Bludgeoning",
+            "parry": " Yes",
+            "weight": "Normal",
+            "notes": " Two-handed",
+            "type": "simple melee"
         },
         "Spear": {
             "min": 25,
-            "max": 28
+            "max": 28,
+            "cost": " 20",
+            "damage": "D6+1Piercing",
+            "parry": " No",
+            "weight": "Normal",
+            "notes": " Versatile(D8+1)",
+            "type": "simple melee"
         },
         "Bow": {
             "min": 29,
-            "max": 32
+            "max": 32,
+            "cost": " 150",
+            "damage": "D6+1Piercing",
+            "parry": " 320",
+            "weight": "Normal",
+            "notes": " Two-handed",
+            "type": "ranged"
         },
         "Dart": {
             "min": 33,
-            "max": 36
+            "max": 36,
+            "cost": "10per +1UD",
+            "damage": "D4+1Piercing",
+            "parry": " 60",
+            "weight": " Light",
+            "notes": " Fast",
+            "type": "ranged"
         },
         "Javelin": {
             "min": 37,
-            "max": 40
+            "max": 40,
+            "cost": " 60",
+            "damage": "D6+1Piercing",
+            "parry": " 120",
+            "weight": " Light",
+            "notes": " -",
+            "type": "ranged"
         },
         "Net": {
             "min": 41,
-            "max": 44
+            "max": 44,
+            "cost": " 25",
+            "damage": " -",
+            "parry": " STR",
+            "weight": " Light",
+            "notes": "Target becomes Entangled",
+            "type": "ranged"
         },
         "Sling": {
             "min": 45,
-            "max": 50
+            "max": 50,
+            "cost": " 10",
+            "damage": "D8+1 Bludgeoning",
+            "parry": "120",
+            "weight": " Light",
+            "notes": " Difficult(50)",
+            "type": "ranged"
         },
         "ThrowingKnife": {
             "min": 51,
-            "max": 54
+            "max": 54,
+            "cost": "20",
+            "damage": "D6+1Piercing",
+            "parry": " 60",
+            "weight": " Light",
+            "notes": " Fast",
+            "type": "ranged"
         },
         "Battleaxe": {
             "min": 55,
-            "max": 58
+            "max": 58,
+            "cost": " 250",
+            "damage": " 3D6Slashing",
+            "parry": " Yes",
+            "weight": "Heavy",
+            "notes": " Two-handed",
+            "type": "martial melee"
         },
         "Flail": {
             "min": 59,
-            "max": 62
+            "max": 62,
+            "cost": " 300",
+            "damage": "D10+1 Bludgeoning",
+            "parry": "No",
+            "weight": "Normal",
+            "notes": " Difficult(50)",
+            "type": "martial melee"
         },
         "Glaive": {
             "min": 63,
-            "max": 66
+            "max": 66,
+            "cost": " 125",
+            "damage": " D10Slashing",
+            "parry": " Yes",
+            "weight": "Heavy",
+            "notes": " Two-handed",
+            "type": "martial melee"
         },
         "Greatsword": {
             "min": 67,
-            "max": 70
+            "max": 70,
+            "cost": " 200",
+            "damage": " 2D8Slashing",
+            "parry": " Yes",
+            "weight": "Heavy",
+            "notes": " Two-handed",
+            "type": "martial melee"
         },
         "Lance": {
             "min": 71,
-            "max": 74
+            "max": 74,
+            "cost": " 150",
+            "damage": "D8+1Piercing",
+            "parry": " No",
+            "weight": "Normal",
+            "notes": " Two-handed",
+            "type": "martial melee"
         },
         "Longsword": {
             "min": 75,
-            "max": 78
+            "max": 78,
+            "cost": " 150",
+            "damage": "D8+1Slashing",
+            "parry": " Yes",
+            "weight": "Normal",
+            "notes": " Versatile(D10)",
+            "type": "martial melee"
         },
         "Maul": {
             "min": 79,
-            "max": 82
+            "max": 82,
+            "cost": " 300",
+            "damage": "D10+3 Bludgeoning",
+            "parry": "No",
+            "weight": "Heavy",
+            "notes": "Two-handed, Difficult(50)",
+            "type": "martial melee"
         },
         "Morningstar": {
             "min": 83,
-            "max": 86
+            "max": 86,
+            "cost": " 250",
+            "damage": "D10 Bludgeoning",
+            "parry": "No",
+            "weight": "Normal",
+            "notes": " -",
+            "type": "martial melee"
         },
         "Scimitar": {
             "min": 87,
-            "max": 90
+            "max": 90,
+            "cost": " 120",
+            "damage": "D8+1Slashing",
+            "parry": " Yes",
+            "weight": "Normal",
+            "notes": " -",
+            "type": "martial melee"
         },
         "Shortsword": {
             "min": 91,
-            "max": 94
+            "max": 94,
+            "cost": " 100",
+            "damage": "D6+1Slashing",
+            "parry": " Yes",
+            "weight": "Normal",
+            "notes": " -",
+            "type": "martial melee"
         },
         "Trident": {
             "min": 95,
-            "max": 96
+            "max": 96,
+            "cost": " 35",
+            "damage": "D6+2Piercing",
+            "parry": " No",
+            "weight": "Normal",
+            "notes": " -",
+            "type": "martial melee"
         },
         "WarPick": {
             "min": 97,
-            "max": 98
+            "max": 98,
+            "cost": " 100",
+            "damage": "D6+2 Bludgeoning",
+            "parry": "No",
+            "weight": "Normal",
+            "notes": " -",
+            "type": "martial melee"
         },
         "Whip": {
             "min": 99,
-            "max": 100
+            "max": 100,
+            "cost": " 25",
+            "damage": "D6+1Slashing",
+            "parry": " No",
+            "weight": "Light",
+            "notes": "Difficult(60), Fast",
+            "type": "martial melee"
         }
     },
     "spells": [
