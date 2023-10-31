@@ -153,7 +153,9 @@ function genChar() {
         const escape = getRandomfromList(bsdata["escape"]);
         notes.push(`After ${getRandomfromList(bsdata["length"]).toLowerCase()}, ${escape["means"]}.`);
         // adjust skill based on escape method
-        bsdata["skills"][escape["adjust"].replace("+5", "")]["score"] += 5;
+        const skill = escape["adjust"].replace("+5", "");
+        console.log(`Adusting ${skill} skill for escape attempt`);
+        bsdata["skills"][skill]["score"] += 5;
         // do we steal something from the cult?
         let myWeapons = [];
         let myItems = [];
