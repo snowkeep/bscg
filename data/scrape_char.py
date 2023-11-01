@@ -171,7 +171,7 @@ for sk in parts[stealstart+3:-1]:
                 red = tokens2[1].removesuffix(")")
             else:
                 red = ""
-            if "shards" in tokens[0] or "moonstone" in tokens[0]:
+            if "shards" in tokens[0] or "moonstone" in tokens[0] or "weapon" in tokens[0]:
                 encumbering = True
             else:
                 encumbering = False

@@ -198,7 +198,7 @@
         "Anenchantedweapon(rollontherandomweapontable)thatdealsan extra D4 damage": {
             "price": " You received a wound that doesn't really heal ",
             "reduce": "-1 CON",
-            "encumbering": false
+            "encumbering": true
         },
         "Amoonstonethatcanstoreupto10PP": {
             "price": "Yousufferedaterribleblowto thehead",

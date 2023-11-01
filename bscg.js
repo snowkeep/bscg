@@ -103,12 +103,21 @@ function genChar() {
         }
         // rest of the skills get 0
         skills.forEach((name) => { bsdata["skills"][name]["score"] = 0; });
-        // TODO : spell details
+        // spells in place of +20 skills
         let mySpells = [];
         const spells = shuffleList(Object.keys(bsdata["spells"]));
         if (numSpells > 0) {
             for (let i = 0; i < numSpells; i++) {
-                mySpells.push({ name: spells[i], idiosyncracy: getRandomfromList(bsdata["idiosyncracies"]) });
+                const thisSpell = bsdata["spells"][spells[i]];
+                mySpells.push({
+                    name: spells[i],
+                    pp: thisSpell["pp"],
+                    range: thisSpell["range"],
+                    resisted: thisSpell["resisted"],
+                    duration: thisSpell["duration"],
+                    description: thisSpell["description"],
+                    idiosyncracy: getRandomfromList(bsdata["idiosyncracies"])
+                });
             }
         }
         // talents
@@ -138,7 +147,16 @@ function genChar() {
                     break;
                 case "Sorcerer":
                     console.log("Adding spell for Sorcerer talent");
-                    mySpells.push({ name: spells[numSpells], idiosyncracy: getRandomfromList(bsdata["idiosyncracies"]) });
+                    const thisSpell = bsdata["spells"][spells[numSpells]];
+                    mySpells.push({
+                        name: spells[i],
+                        pp: thisSpell["pp"],
+                        range: thisSpell["range"],
+                        resisted: thisSpell["resisted"],
+                        duration: thisSpell["duration"],
+                        description: thisSpell["description"],
+                        idiosyncracy: getRandomfromList(bsdata["idiosyncracies"])
+                    });
                     break;
                 case "Vigorous":
                     console.log("Modifying HP for Vigorous talent");
@@ -162,7 +180,20 @@ function genChar() {
         let myNEItems = [];
         if (getRandomfromList([true, false])) {
             const stole = getRandomfromList(Object.keys(bsdata["steal"]));
-            // TODO: enchanted weapon
+            if (stole.slice(0, 18) == "An enchanted weapon") {
+                // roll on the weapons and adjust for enchantment
+                const wn = roll(100);
+                Object.keys(bsdata["weapons"]).forEach((weapon) => {
+                    if ((wn >= bsdata["weapons"][weapon]["min"]) && (wn <= bsdata["weapons"][weapon]["max"])) {
+                        const thisWeapon = bsdata["weapons"][weapon];
+                        myWeapons.push({ name: weapon, wtype: thisWeapon["type"], damage: `${thisWeapon["damage"]} + D4`, notes: `enchanted, ${thisWeapon["notes"]}` });
+                        myItems.push(`enchanted ${weapon} (${thisWeapon["weight"]})`);
+                        if (weapon == "Bow") {
+                            myItems.push("Quiver (UD6 arrows)");
+                        }
+                    }
+                });
+            }
             if (bsdata["steal"][stole]["encumbering"]) {
                 if (stole.slice(0, 3) == "3D10") {
                     myItems.push(`Shards (${roll(10) + roll(10) + roll(10)})`);
@@ -198,11 +229,15 @@ function genChar() {
             ally = true;
         }
         // weapon
-        // TODO: make a function in case we steal a magic weapon
         const wn = roll(100);
         Object.keys(bsdata["weapons"]).forEach((weapon) => {
             if ((wn >= bsdata["weapons"][weapon]["min"]) && (wn <= bsdata["weapons"][weapon]["max"])) {
-                myWeapons.push({ name: weapon, wtype: "foo", damage: "bar" });
+                const thisWeapon = bsdata["weapons"][weapon];
+                myWeapons.push({ name: weapon, wtype: thisWeapon["type"], damage: thisWeapon["damage"], notes: thisWeapon["notes"] });
+                myItems.push(`${weapon} (${thisWeapon["weight"]})`);
+                if (weapon == "Bow") {
+                    myItems.push("Quiver (UD6 arrows)");
+                }
             }
         });
         // gear
