@@ -3,6 +3,8 @@
 from pypdf import PdfReader
 import re
 import json
+# TODO: remove
+import time
 
 skillRe = re.compile("-\s?(.*)\((\w+)\):(.*)")
 talentRe = re.compile("-\s?(.*):(.*)")
@@ -238,19 +240,29 @@ for weapon, dat in wdata.items():
 
 # spells
 # TODO: get spell details
-data["spells"] = []
+data["spells"] = {}
+spellList = []
 parts = []
-page = reader.pages[56-1]
-page.extract_text(visitor_text=visitor_body)
+pages = reader.pages[57-1:59]
+for page in pages:
+    page.extract_text(visitor_text=visitor_body)
 parts = list(filter("\n".__ne__, parts))
+spellStarts = [i-1 for i, item in enumerate(parts) if item.startswith("Cost")]
+for i in range(len(spellStarts) - 1):
+    spellList.append(parts[spellStarts[i]:spellStarts[i+1]])
+spellList.append(parts[spellStarts[-1]:])
 
-spellstart = parts.index("D20")
-for sk in parts[spellstart+2:]:
-
-    if numRe.match(sk):
-        continue
-    else:
-        data["spells"].append(sk)
+for sp in spellList:
+    tokens = sp[1].split("/")
+    text =  "".join(sp[2:]).split(".")
+    data["spells"][sp[0]] = {
+        "pp":           tokens[0].split(":")[-1],
+        "range":        tokens[1].split(":")[-1],
+        "resisted":     tokens[2].split(":")[-1],
+        "duration":     tokens[3].split(":")[-1],
+        "description":  ".".join(text[:-2]) + ".",
+        "flavour":      text[-2] + "."
+    }
 
 # spell idosyncracies
 data["idiosyncracies"] = []

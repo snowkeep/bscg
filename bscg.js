@@ -105,7 +105,7 @@ function genChar() {
         skills.forEach((name) => { bsdata["skills"][name]["score"] = 0; });
         // TODO : spell details
         let mySpells = [];
-        const spells = shuffleList(bsdata["spells"]);
+        const spells = shuffleList(Object.keys(bsdata["spells"]));
         if (numSpells > 0) {
             for (let i = 0; i < numSpells; i++) {
                 mySpells.push({ name: spells[i], idiosyncracy: getRandomfromList(bsdata["idiosyncracies"]) });
@@ -162,6 +162,7 @@ function genChar() {
         let myNEItems = [];
         if (getRandomfromList([true, false])) {
             const stole = getRandomfromList(Object.keys(bsdata["steal"]));
+            // TODO: enchanted weapon
             if (bsdata["steal"][stole]["encumbering"]) {
                 if (stole.slice(0, 3) == "3D10") {
                     myItems.push(`Shards (${roll(10) + roll(10) + roll(10)})`);
