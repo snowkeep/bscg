@@ -28,6 +28,10 @@
             "attribute": "WIL",
             "description": "A creature's objectives or motives can be deduced via an Insight check."
         },
+        "Literacy": {
+            "attribute": "INT",
+            "description": "The ability to read, understand, and reproduce the written word. This skill is a must for anyone interested in learning the secrets of magic contained in grimoires and glyphs. \u201cWritten word\u201d in Zephorus might very well mean delicate notches on a bone, actual letters and pictograms written on vellum, or even the complex knot language of the Atharri."
+        },
         "Manipulation": {
             "attribute": "CHA",
             "description": "With this skill a character can influence an NPC's opinion or actions, either via a well-placed threat, lies or sheer flattery."
@@ -79,6 +83,10 @@
         "Survival": {
             "attribute": "INT",
             "description": "This skill helps a character to undertake tasks like fishing, tracking, avoiding natural hazards, and traveling without becoming lost in the One Sea."
+        },
+        "Unarmed Combat": {
+            "attribute": "STR",
+            "description": "Unarmed Combat includes improvised, dirty fighting, elegant martial arts mastery, and anything in between. This skill comes in handy in all those situations when you don't have a weapon at hand. An unarmed character deals D4-1 damage (minimum 1)."
         }
     },
     "talents": {
@@ -227,7 +235,7 @@
         "Torches (UD4)",
         "D4 candles",
         "D4 empty flasks",
-        "Fishingrod",
+        "Fishing rod",
         "Rope (40ft)",
         "Tinderbox",
         "Bandages (UD4)",

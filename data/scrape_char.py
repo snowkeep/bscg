@@ -62,6 +62,7 @@ for i in range(13-1,14):
             constr = line.strip()
         else:
             constr = constr + " " + line.strip()
+    formated.append(constr.replace("  ", " "))
 
     for sk in formated[1:]:
         m = skillRe.match(sk)
