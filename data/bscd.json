@@ -4,9 +4,9 @@
             "attribute": "DEX",
             "description": "A character can roll beneath a closing gate, swing across a chasm on a rope, or hold their balance on a precarious ledge by passing an Acrobatics check."
         },
-        "AnimalHandling": {
+        "Animal Handling": {
             "attribute": "CHA",
-            "description": "Whena character wants to attempt to calm downadomesticatedanimal,intuit an animal's intentions, or even to control their mount when attemptingariskymaneuver,thisis theskilltheymustuse."
+            "description": "When a character wants to attempt to calm down a domesticated animal, intuit an animal's intentions, or even to control their mount when attempting a risky maneuver, this is the skill they must use."
         },
         "Athletics": {
             "attribute": "STR",
@@ -14,209 +14,209 @@
         },
         "Command": {
             "attribute": "CHA",
-            "description": "This skill allowsacharactertotakecontrolof a group of soldiers and lead them into battle, or to arrange and organize an efficient group task, suchasaship'screw.Itdetermines how good a character is at commanding other characters that areundertheirorders."
+            "description": "This skill allows a character to take control of a group of soldiers and lead them into battle, or to arrange and organize an efficient group task, such as a ship's crew. It determines how good a character is at commanding other characters that are under their orders."
         },
         "Crafting": {
             "attribute": "DEX",
-            "description": "With this skill a character is able to fix or create small objects, like mending some leather boots, fixing a broken hilt, and any other task that doesn't require a very specialized knowledge. This general skill covers any sort of leather-working, bone-crafting,andcarpentry."
+            "description": "With this skill a character is able to fix or create small objects, like mending some leather boots, fixing a broken hilt, and any other task that doesn't require a very specialized knowledge. This general skill covers any sort of leather-working, bone-crafting, and carpentry."
         },
         "Dodge": {
             "attribute": "DEX",
-            "description": "Acharacter'sability to get out of the way, either during combatoroutofit.Thisskillisalso used when a character attempts to disengagefromameleefight."
+            "description": "A character's ability to get out of the way, either during combat or out of it.This skill is also used when a character attempts to disengage from a melee fight."
         },
         "Insight": {
             "attribute": "WIL",
-            "description": "A creature's objectives or motives can be deducedviaanInsightcheck."
+            "description": "A creature's objectives or motives can be deduced via an Insight check."
         },
         "Manipulation": {
             "attribute": "CHA",
-            "description": "With this skill a character can influence an NPC'sopinionoractions,eithervia a well-placed threat, lies or sheer flattery."
+            "description": "With this skill a character can influence an NPC's opinion or actions, either via a well-placed threat, lies or sheer flattery."
         },
         "Martial Weapons": {
             "attribute": "STR",
-            "description": "This skill allows a character to wield weaponssuchasthebattelaxe,flail, glaive, greataxe, greatsword, lance, longsword, maul, morningstar, scimitar, shortsword, trident, war pick,warhammer,andwip."
+            "description": "This skill allows a character to wield weapons such as the battle axe, flail, glaive, greataxe, greatsword, lance, longsword, maul, morningstar, scimitar, shortsword, trident, war-pick, warhammer, and whip."
         },
         "Medicine": {
             "attribute": "INT",
-            "description": "In order to stabilize a dying person, treat or diagnose a sickness or poison, heal wounds, or establish the cause of death, a character must make a Medicinecheck."
+            "description": "In order to stabilize a dying person, treat or diagnose a sickness or poison, heal wounds, or establish the cause of death, a character must make a Medicine check."
         },
         "Nature": {
             "attribute": "INT",
-            "description": "The character's understanding of natural terrains, monsters, plants, and threats is measured by the Nature skill. Unlike Survival, this skill does not involve practical experience with thenaturalworld."
+            "description": "The character's understanding of natural terrains, monsters, plants, and threats is measured by the Nature skill. Unlike Survival, this skill does not involve practical experience with the natural world."
         },
         "Perception": {
             "attribute": "WIL",
-            "description": "Perception referstoacharacter'sabilitytosee, hear,orsensethings."
+            "description": "Perception refers to a character's ability to see, hear, or sense things."
         },
         "Performance": {
             "attribute": "CHA",
-            "description": "With a Performancecheck,acharactercan sing, act, or otherwise amuse an audience."
+            "description": "With a Performance check,  acharacter can sing, act, or otherwise amuse an audience."
         },
         "Ranged Weapons": {
             "attribute": "DEX",
-            "description": "The ability to wield ranged weapons in combat, such as any type of bow, throwing daggers, darts, and even throwingnets."
+            "description": "The ability to wield ranged weapons in combat, such as any type of bow, throwing daggers, darts, and even throwing nets."
         },
         "Sailing": {
             "attribute": "DEX",
             "description": "A character's ability to properly tend to and navigate boats and vessels of any size."
         },
-        "SiegeWeapons": {
+        "Siege Weapons": {
             "attribute": "DEX",
-            "description": "This skill determines a character's ability to wield the large weapons sometimes used by fortifications and larger vessels,suchasballistaeorcatapults."
+            "description": "This skill determines a character's ability to wield the large weapons sometimes used by fortifications and larger vessels, such as ballistae or catapults."
         },
         "Simple Melee Weapons": {
             "attribute": "STR",
-            "description": "This skill measures a character's ability to wield the following weapons: Club, dagger, greatclub, handaxe, javelin, mace, quarterstaff,andspear."
+            "description": "This skill measures a character's ability to wield the following weapons: Club, dagger, greatclub, handaxe, javelin, mace, quarterstaff, and spear."
         },
         "Sleight of Hand": {
             "attribute": "DEX",
-            "description": "To conduct legerdemain, pickpocket, hide an object on another person, make a secret hand signal, or otherwise trick the eyes with feats of dexterity, a character makes a SleightofHandcheck."
+            "description": "To conduct legerdemain, pickpocket, hide an object on another person, make a secret hand signal, or otherwise trick the eyes with feats of dexterity, a character makes a Sleight of Hand check."
         },
         "Stealth": {
             "attribute": "DEX",
-            "description": "Stealth is used to hide or avoid notice. A character's Stealthcheckisusuallyopposedby a potential observer's Perception check."
+            "description": "Stealth is used to hide or avoid notice. A character's Stealth check is usually opposedby a potential observer's Perception check."
         },
         "Survival": {
             "attribute": "INT",
-            "description": "This skill helps a character to undertake tasks like fishing, tracking, avoiding natural hazards, and traveling without becominglostintheOneSea."
+            "description": "This skill helps a character to undertake tasks like fishing, tracking, avoiding natural hazards, and traveling without becoming lost in the One Sea."
         }
     },
     "talents": {
-        "Aim": "For your next attack, add +30 to your Ranged Weapons skill and +1 damage if you spend a wholeroundaiming.",
-        "AncientSoul": "IncreaseyourPPby +5permanently.",
-        "Archery Expert": "Attacks made with ranged weapons ignore 2 pointsofarmor.",
-        "Backstab": "Double your attack damage when attacking an unsuspecting target with a one- handedmeleeweapon.",
-        "Brace": "Whenyoureceiveacritical hit, perform a successful Vitality check to avoid rolling on the Critical Hit table. You still receive doublethedamageasusualthough.",
-        "Brawler": "Your unarmed attacks dealD6damage.",
+        "Aim": "For your next attack, add +30 to your Ranged Weapons skill and +1 damage if you spend a whole round aiming.",
+        "AncientSoul": "Increase your PP by +5 permanently.",
+        "Archery Expert": "Attacks made with ranged weapons ignore 2 points of armor.",
+        "Backstab": "Double your attack damage when attacking an unsuspecting target with a one-handed melee weapon.",
+        "Brace": "When you receive a critical hit, perform a successful Vitality check to avoid rolling on the Critical Hit table. You still receive double the damage as usual though.",
+        "Brawler": "Your unarmed attacks deal D6 damage.",
         "Camouflage": "You automatically pass all Stealth checks when attempting to hide in natural terrain.",
-        "Controlled Breathing": "You can holdyourbreathforCONx2rounds.",
-        "Break Armor": "Perform a standard attack. If it hits, reduce thetarget'sarmorby1.",
-        "Charger": "+10 to your attack roll and +D4 damage when you charge intocombat.",
+        "Controlled Breathing": "You can hold your breath for CONx2 rounds.",
+        "Break Armor": "Perform a standard attack. If it hits, reduce the target's armor by 1.",
+        "Charger": "+10 to your attack roll and +D4 damage when you charge into combat.",
         "Dauntless": "You are immune to Fear.",
         "Dual Wielder": "You no longer suffer any penalty from wielding two one-handed weapons during combat.",
         "Duelist": "+20 to your attack skill when wielding a one-handed weapon.",
-        "Elusive": "Your Dodge skill is reduced by -20 after each dodge attempted in the same round, insteadofby-30.",
-        "ExploitWeakSpot": "Your attacks ignore1pointofarmor.",
-        "Fast Swimmer": "Your swimming speedisDEXx3ft./round.",
-        "Frugal": "You only require one rationeachtwodays.",
-        "Gifted - Charisma": "You may re- rollanyfailedskilluprollsforskills associatedwithCHA.",
-        "Gifted - Dexterity": "You may re- rollanyfailedskilluprollsforskills associatedwithDEX.",
-        "Gifted-Intelligence": "Youmayre- rollanyfailedskilluprollsforskills associatedwithINT.",
-        "Gifted-Strength": "Youmayre-roll any failed skill up rolls for skills associatedwith STR.",
-        "Gifted-Will": "You may re-roll any failed skill up rolls for skills associatedwithWIL.",
-        "Haggler": "You will never receive less than the standard price when sellingyourloot.",
+        "Elusive": "Your Dodge skill is reduced by -20 after each dodge attempted in the same round, instead of by -30.",
+        "Exploit Weak Spot": "Your attacks ignore 1 point of armor.",
+        "Fast Swimmer": "Your swimming speed is DEXx3ft./round.",
+        "Frugal": "You only require one ration each two days.",
+        "Gifted - Charisma": "You may re-roll any failed skill up rolls for skills associated with CHA.",
+        "Gifted - Dexterity": "You may re-roll any failed skill up rolls for skills associated with DEX.",
+        "Gifted - Intelligence": "You may re-roll any failed skill up rolls for skills associated with INT.",
+        "Gifted - Strength": "You may re-roll any failed skill up rolls for skills associated with STR.",
+        "Gifted - Will": "You may re-roll any failed skill up rolls for skills associated with WIL.",
+        "Haggler": "You will never receive less than the standard price when selling your loot.",
         "Healer": "While tending to the wounds of others with the Medicine skill, triple their healing rate.",
-        "Inspiring Chant": "Once per combat, perform a Performance check.Ifyousucceed,youandyour allies receive +5 temporary Health Points. These extra HP dissipate at theendofcombat.",
-        "LeadtheFight": "Oncepercombat, perform a Command check. If successful, your allies receive +10 totheirattackrollsuntiltheendof combat.",
-        "Marksman": "+20 to your attack skillwhenusingarangedweapon.",
-        "MindFortress": "You'reimmuneto alltypesofmindcontrolorcharm.",
-        "Moon-Touched": "+20whenrolling ontheSpellEffecttable.",
-        "Multiple Attacks": "You can split your attack skill in two and perform a different attack with each resulting score in the same turn.Forexample,acharacterwith a Martial Weapons skill of 56 can choose to assign his first attack a score of 30 and the second one the remaining 26. In order to successfully hit, the character wouldhavetoperformaskillcheck as usual, once for each separate score.",
-        "MysticalStrike": "Youcanspendup to 5 PP to deal the same amount of extra damage when performing an attack.",
+        "Inspiring Chant": "Once per combat, perform a Performance check. If you succeed, you and your allies receive +5 temporary Health Points. These extra HP dissipate at the end of combat.",
+        "Lead the Fight": "Once per combat, perform a Command check. If successful, your allies receive +10 to their attack rolls until the end of combat.",
+        "Marksman": "+20 to your attack skill when using a ranged weapon.",
+        "Mind Fortress": "You're immune to all types of mind control or charm.",
+        "Moon-Touched": "+20 when rolling on the Spell Effect table.",
+        "Multiple Attacks": "You can split your attack skill in two and perform a different attack with each resulting score in the same turn. For example, a character with a Martial Weapons skill of 56 can choose to assign his first attack a score of 30 and the second one the remaining 26. In order to successfully hit, the character would have to perform a skill check as usual, once for each separate score.",
+        "Mystical Strike": "You can spend up to 5 PP to deal the same amount of extra damage when performing an attack.",
         "Powerful": "Reduce a target's Tenacity score by -20 when attempting to resist one of your spells.",
-        "Quick-Handed": "+30 to your Sleight of Hand skill when performingacheck.",
-        "Quick Healer": "You recover 5 HP perdayofrest,insteadoftheusual3.",
-        "Resilient": "WhenreceivingaMajor Wound, perform a Vitality check. If successful, you can ignore the wound'seffects.",
-        "Silent": "+30 to your Stealth skill whenperformingacheck.",
-        "Slippery": "You can automatically disengage from combat without havingtoperformaDodgecheck.",
+        "Quick-Handed": "+30 to your Sleight of Hand skill when performing a check.",
+        "Quick Healer": "You recover 5 HP per day of rest, instead of the usual 3.",
+        "Resilient": "When receiving a Major Wound, perform a Vitality check. If successful, you can ignore the wound's effects.",
+        "Silent": "+30 to your Stealth skill when performing a check.",
+        "Slippery": "You can automatically disengage from combat without having to perform a Dodge check.",
         "Slayer": "+20 to your attack skill when wielding a two-handed weapon.",
-        "Snakeblood": "Increase your Vitality score by +30 when attempting to resist the effects of poisonorvenom.",
-        "Sorcerer": "Startthegameknowing an extra spell of your choice. Only new characters may pick this Talent.",
-        "Taunt": "Add +20 to your Manipulation skill and make a check. If successful, all human opponents within hearing range are forced to attack you on their nextturn.",
-        "TerrifyingVoice": "Add+20toyour Manipulation skill and make a check. If successful, your target must pass a Tenacity check or suffer the effects of Fear for D4 rounds.",
-        "Unstoppable": "After reducing an opponent to 0 HP, you can immediately perform a free attack againstthenearestopponent.",
-        "Vigorous": "IncreaseyourHPby+5 permanently.",
-        "Watchful": "+5 Initiative, you cannotbesurprised."
+        "Snakeblood": "Increase your Vitality score by +30 when attempting to resist the effects of poison or venom.",
+        "Sorcerer": "Start the game knowing an extra spell of your choice. Only new characters may pick this Talent.",
+        "Taunt": "Add +20 to your Manipulation skill and make a check. If successful, all human opponents within hearing range are forced to attack you on their next turn.",
+        "Terrifying Voice": "Add +20 to your Manipulation skill and make a check. If successful, your target must pass a Tenacity check or suffer the effects of Fear for D4 rounds.",
+        "Unstoppable": "After reducing an opponent to 0 HP, you can immediately perform a free attack against the nearest opponent.",
+        "Vigorous": "Increase your HP by +5 permanently.",
+        "Watchful": "+5 Initiative, you cannot be surprised."
     },
     "cults": {
         "The Thousand Tears": "a particularly violent group of Aphion worshippers",
         "Nirena's Emissaries": "a congregation that worships the Goddess of Death",
         "The Hallowed Creed": "zealots working to bring back Phenir, God of Justice",
-        "TheGoldenOracle": "fanaticshopingtoresurrectQhanas,GodofMagic",
-        "TheRedSky": "adoomsdaycultthatendlesslysacrificesvictimstoUara, GoddessoftheSky",
+        "The Golden Oracle": "fanatics hoping to resurrect Qhanas, God of Magic",
+        "The RedSky": "a doomsday cult that endlessly sacrifices victims to Uara, Goddess of the Sky",
         "The Faded": "fanatics that consider humanity should have been exterminated",
-        "The Silent Gathering": "a strange organization that worships Mantris, GoddessoftheNight",
-        "The Bronze Children": "their skin covered in sunburns and tumors, worshippersofIrus,GodoftheSun",
+        "The Silent Gathering": "a strange organization that worships Mantris, Goddess of the Night",
+        "The Bronze Children": "their skin covered in sunburns and tumors, worshippers of Irus, God of the Sun",
         "The Broken": "followers of Ulies, God of Wind, attempting to bring him back",
-        "The Last Order": "lost souls trying to interpret the last words of Kothe, GoddessofDuty"
+        "The Last Order": "lost souls trying to interpret the last words of Kothe, Goddess of Duty"
     },
     "why": [
-        "You'reafilthyheretic",
-        "Ourcauserequiresblood",
+        "You're a filthy heretic",
+        "Our cause requires blood",
         "Someone needs to man the galleys",
-        "Youmustknowsomething!",
-        "Youhadsomethingofvalue",
-        "Whoknowswhythesebastards choosetodoanything?"
+        "You must know something!",
+        "You had something of value",
+        "Who knows why these bastards choose to do anything?"
     ],
     "length": [
-        "Aweek",
-        "Amonth",
-        "Threemonths",
-        "Sixmonths",
-        "Ayear"
+        "A week",
+        "A month",
+        "Three months",
+        "Six months",
+        "A year"
     ],
     "escape": [
         {
-            "means": "Iseducedamemberofthecrew",
-            "adjust": "+5Manipulation"
+            "means": "I seduced a member of the crew",
+            "adjust": "+5 Manipulation"
         },
         {
-            "means": "Ikilledmywayout",
-            "adjust": "+5UnarmedCombat"
+            "means": "I killed my way out",
+            "adjust": "+5 Unarmed Combat"
         },
         {
-            "means": "IsawanopportunityandItookit",
-            "adjust": "+5Perception"
+            "means": "I saw an opportunity andI took it",
+            "adjust": "+5 Perception"
         },
         {
-            "means": "Icarefullycraftedaplanandexecutedit",
-            "adjust": "+5Insight"
+            "means": "I carefully crafted a plan and executed it",
+            "adjust": "+5 Insight"
         },
         {
-            "means": "Isnuckout;nobodyevenrealizedIwasgone",
-            "adjust": "+5Stealth"
+            "means": "I snuck out; nobody even realized I was gone",
+            "adjust": "+5 Stealth"
         },
         {
-            "means": "Iplayeddeadandtheyforgotaboutme",
-            "adjust": "+5Performance"
+            "means": "I played dead and they forgot about me",
+            "adjust": "+5 Performance"
         },
         {
-            "means": "Iusedmyskillsandmadeawayout",
-            "adjust": "+5Crafting"
+            "means": "I used my skills and made a way out",
+            "adjust": "+5 Crafting"
         },
         {
-            "means": "Istartedarevolt",
-            "adjust": "+5Command"
+            "means": "I started a revolt",
+            "adjust": "+5 Command"
         }
     ],
     "steal": {
-        "3D10shards": {
-            "price": "Youlostafingerinthefightthough",
-            "reduce": "-1DEX",
+        "3D10 shards": {
+            "price": "You lost a finger in the fight though",
+            "reduce": "-1 DEX",
             "encumbering": true
         },
-        "Anenchantedweapon(rollontherandomweapontable)thatdealsan extra D4 damage": {
+        "An enchanted weapon that deals an extra D4 damage": {
             "price": " You received a wound that doesn't really heal ",
             "reduce": "-1 CON",
             "encumbering": true
         },
-        "Amoonstonethatcanstoreupto10PP": {
-            "price": "Yousufferedaterribleblowto thehead",
-            "reduce": "-1INT",
+        "A moonstone that can store up to 10 PP": {
+            "price": "You suffered a terrible blow to the head",
+            "reduce": "-1 INT",
             "encumbering": true
         },
-        "ARing of Waterlungs (can cast the Waterlungs spell 1/day)": {
-            "price": " Your face wasslashed",
-            "reduce": "-1CHA",
+        "A Ring of Waterlungs (can cast the Waterlungs spell 1/day)": {
+            "price": " Your face was slashed",
+            "reduce": "-1 CHA",
             "encumbering": false
         },
-        "ABracelet of Flaming Hand (can cast the Flaming Hand spell 1/day)": {
-            "price": " YouarenowHuntedbythecult",
+        "A Bracelet of Flaming Hand (can cast the Flaming Hand spell 1/day)": {
+            "price": " You are now Hunted by the cult",
             "reduce": "",
             "encumbering": false
         },
-        "ARing of Healing (can cast the Stitch Wound spell 1/day)": {
-            "price": " You were prettywounded,startthegamehavinglost5HP",
+        "A Ring of Healing (can cast the Stitch Wound spell 1/day)": {
+            "price": " You were pretty wounded, start the game having lost 5HP",
             "reduce": "-5 HP",
             "encumbering": false
         }
@@ -224,21 +224,21 @@
     "gear": [
         "Backpack",
         "Knife",
-        "Torches(UD4)",
-        "D4candles",
-        "D4emptyflasks",
+        "Torches (UD4)",
+        "D4 candles",
+        "D4 empty flasks",
         "Fishingrod",
-        "Rope(40ft)",
+        "Rope (40ft)",
         "Tinderbox",
-        "Bandages(UD4)",
-        "D10Craftingsupplies"
+        "Bandages (UD4)",
+        "D10 Crafting supplies"
     ],
     "weapons": {
         "Club": {
             "min": 1,
             "max": 4,
             "cost": " 5",
-            "damage": "D6Bludgeoning",
+            "damage": "D6 Bludgeoning",
             "parry": " Yes",
             "weight": "Normal",
             "notes": " -",
@@ -248,7 +248,7 @@
             "min": 5,
             "max": 8,
             "cost": " 35",
-            "damage": "D4+1Piercing",
+            "damage": "D4+1 Piercing",
             "parry": " No",
             "weight": "Light",
             "notes": " Fast",
@@ -258,7 +258,7 @@
             "min": 9,
             "max": 12,
             "cost": " 15",
-            "damage": "D8Bludgeoning",
+            "damage": "D8 Bludgeoning",
             "parry": " Yes",
             "weight": "Heavy",
             "notes": " -",
@@ -268,7 +268,7 @@
             "min": 13,
             "max": 16,
             "cost": " 35",
-            "damage": "D6+1Slashing",
+            "damage": "D6+1 Slashing",
             "parry": " No",
             "weight": "Normal",
             "notes": " -",
@@ -288,7 +288,7 @@
             "min": 21,
             "max": 24,
             "cost": " 5",
-            "damage": "D8Bludgeoning",
+            "damage": "D8 Bludgeoning",
             "parry": " Yes",
             "weight": "Normal",
             "notes": " Two-handed",
@@ -298,7 +298,7 @@
             "min": 25,
             "max": 28,
             "cost": " 20",
-            "damage": "D6+1Piercing",
+            "damage": "D6+1 Piercing",
             "parry": " No",
             "weight": "Normal",
             "notes": " Versatile(D8+1)",
@@ -308,7 +308,7 @@
             "min": 29,
             "max": 32,
             "cost": " 150",
-            "damage": "D6+1Piercing",
+            "damage": "D6+1 Piercing",
             "parry": " 320",
             "weight": "Normal",
             "notes": " Two-handed",
@@ -318,7 +318,7 @@
             "min": 33,
             "max": 36,
             "cost": "10per +1UD",
-            "damage": "D4+1Piercing",
+            "damage": "D4+1 Piercing",
             "parry": " 60",
             "weight": " Light",
             "notes": " Fast",
@@ -328,7 +328,7 @@
             "min": 37,
             "max": 40,
             "cost": " 60",
-            "damage": "D6+1Piercing",
+            "damage": "D6+1 Piercing",
             "parry": " 120",
             "weight": " Light",
             "notes": " -",
@@ -351,14 +351,14 @@
             "damage": "D8+1 Bludgeoning",
             "parry": "120",
             "weight": " Light",
-            "notes": " Difficult(50)",
+            "notes": " Difficult (50)",
             "type": "ranged"
         },
-        "ThrowingKnife": {
+        "Throwing Knife": {
             "min": 51,
             "max": 54,
             "cost": "20",
-            "damage": "D6+1Piercing",
+            "damage": "D6+1 Piercing",
             "parry": " 60",
             "weight": " Light",
             "notes": " Fast",
@@ -368,7 +368,7 @@
             "min": 55,
             "max": 58,
             "cost": " 250",
-            "damage": " 3D6Slashing",
+            "damage": " 3D6 Slashing",
             "parry": " Yes",
             "weight": "Heavy",
             "notes": " Two-handed",
@@ -381,14 +381,14 @@
             "damage": "D10+1 Bludgeoning",
             "parry": "No",
             "weight": "Normal",
-            "notes": " Difficult(50)",
+            "notes": " Difficult (50)",
             "type": "martial melee"
         },
         "Glaive": {
             "min": 63,
             "max": 66,
             "cost": " 125",
-            "damage": " D10Slashing",
+            "damage": " D10 Slashing",
             "parry": " Yes",
             "weight": "Heavy",
             "notes": " Two-handed",
@@ -398,7 +398,7 @@
             "min": 67,
             "max": 70,
             "cost": " 200",
-            "damage": " 2D8Slashing",
+            "damage": " 2D8 Slashing",
             "parry": " Yes",
             "weight": "Heavy",
             "notes": " Two-handed",
@@ -408,7 +408,7 @@
             "min": 71,
             "max": 74,
             "cost": " 150",
-            "damage": "D8+1Piercing",
+            "damage": "D8+1 Piercing",
             "parry": " No",
             "weight": "Normal",
             "notes": " Two-handed",
@@ -418,10 +418,10 @@
             "min": 75,
             "max": 78,
             "cost": " 150",
-            "damage": "D8+1Slashing",
+            "damage": "D8+1 Slashing",
             "parry": " Yes",
             "weight": "Normal",
-            "notes": " Versatile(D10)",
+            "notes": " Versatile (D10)",
             "type": "martial melee"
         },
         "Maul": {
@@ -431,7 +431,7 @@
             "damage": "D10+3 Bludgeoning",
             "parry": "No",
             "weight": "Heavy",
-            "notes": "Two-handed, Difficult(50)",
+            "notes": "Two-handed, Difficult (50)",
             "type": "martial melee"
         },
         "Morningstar": {
@@ -448,7 +448,7 @@
             "min": 87,
             "max": 90,
             "cost": " 120",
-            "damage": "D8+1Slashing",
+            "damage": "D8+1 Slashing",
             "parry": " Yes",
             "weight": "Normal",
             "notes": " -",
@@ -458,7 +458,7 @@
             "min": 91,
             "max": 94,
             "cost": " 100",
-            "damage": "D6+1Slashing",
+            "damage": "D6+1 Slashing",
             "parry": " Yes",
             "weight": "Normal",
             "notes": " -",
@@ -468,13 +468,13 @@
             "min": 95,
             "max": 96,
             "cost": " 35",
-            "damage": "D6+2Piercing",
+            "damage": "D6+2 Piercing",
             "parry": " No",
             "weight": "Normal",
             "notes": " -",
             "type": "martial melee"
         },
-        "WarPick": {
+        "War Pick": {
             "min": 97,
             "max": 98,
             "cost": " 100",
@@ -488,7 +488,7 @@
             "min": 99,
             "max": 100,
             "cost": " 25",
-            "damage": "D6+1Slashing",
+            "damage": "D6+1 Slashing",
             "parry": " No",
             "weight": "Light",
             "notes": "Difficult(60), Fast",
@@ -500,199 +500,199 @@
             "pp": "1",
             "range": "Self",
             "resisted": "No",
-            "duration": "Untiltheendofcombat",
-            "description": "Thesorcerer'sInitiativeisincreasedby+1.",
-            "flavour": "A shadow appears behind the sorcerer, seemingly directing their movements untiltheyreachasupernaturalspeed."
+            "duration": "Until the end of combat",
+            "description": "The sorcerer's Initiative is increasedby +1.",
+            "flavour": "A shadow appears behind the sorcerer, seemingly directing their movements until they reacha supernatural speed."
         },
         "Birdsight": {
             "pp": "1",
-            "range": "100ft",
+            "range": "100 ft",
             "resisted": "No",
-            "duration": "WILminutes",
-            "description": "This spell allows the sorcerer to control the direction of one bird's field of visionandshareinthatcreature'svisionfromitsvantagepoint.Oncecast,if thebirdislostfromview,thespellcontinuestohaveeffectandlastsaslong asthespell'sduration.",
-            "flavour": "A cackling skull with the sorcerer's features flies towards the target bird, dissolvingintoit."
+            "duration": "WIL minutes",
+            "description": "This spell allows the sorcerer to control the direction of one bird's field of vision and share in that creature's vision from its vantage point. Once cast, if the bird is lost from view, the spell continues to have effect and lasts as long as the spell's duration.",
+            "flavour": "A cackling skull with the sorcerer's features flies towards the target bird, dissolving into it."
         },
-        "CalmWind": {
+        "Calm Wind": {
             "pp": "8",
-            "range": "100ft",
+            "range": "100 ft",
             "resisted": "No",
             "duration": "Permanent",
-            "description": "The sorcerer reduces the severity of wind by one stage; a \u201cgale\u201d becomes \u201cstrongwind\u201d,and\u201cmoderatewind\u201dbecomesa\u201cbreeze\u201d,forexample.",
-            "flavour": "The sorcerer chants the words of power in a raging crescendo, with the last syllable visibly creating a wave of energy that spreads around them, taking holdovertheragingwinds."
+            "description": "The sorcerer reduces the severity of wind by one stage; a \u201cgale\u201d becomes \u201cstrongwind\u201d, and \u201cmoderatewind\u201d becomes a \u201cbreeze\u201d, for example.",
+            "flavour": "The sorcerer chants the words of power in a raging crescendo, with the last syllable visibly creating a wave of energy that spreads around them, taking hold over the raging winds."
         },
-        "CleanseCorruption": {
+        "Cleanse Corruption": {
             "pp": "8",
             "range": "Touch",
             "resisted": "No",
             "duration": "Permanent",
-            "description": "The target has the effects of one instance of Demonic Corruption removed. TheyreceiveD4damageintheprocess.",
-            "flavour": "Apalehalosurroundsthetarget,increasinginintensityastheyscreaminpain inacrescendooflightandagonyuntilthespelliscompleted."
+            "description": "The target has the effects of one instance of Demonic Corruption removed. They receive D4 damage in the process.",
+            "flavour": "A pale halo surrounds the target, increasing in intensity as they scream inpain in a crescendo of light and agony until the spell is completed."
         },
-        "CloakofShadows": {
+        "Cloak of Shadows": {
             "pp": "2",
             "range": "Self",
             "resisted": "No",
-            "duration": "WILturns",
-            "description": "ThesorcererincreasestheirStealthskillby+20.",
-            "flavour": "All the surrounding shadows amalgamate into one, enveloping the sorcerer in ashroudofdarkness."
+            "duration": "WIL turns",
+            "description": "The sorcerer increases their Stealth skill by +20.",
+            "flavour": "All the surrounding shadows amalgamate into one, enveloping the sorcerer in a shroud of darkness."
         },
         "Clumsiness": {
             "pp": "2",
-            "range": "30ft",
+            "range": "30 ft",
             "resisted": "Yes",
-            "duration": "WILturns",
-            "description": "Reducethetarget'sattackskillsby-20.",
-            "flavour": "The target's hands start to tremble and shake terribly, as a cloud of red dust surroundsthemforthedurationofthespell."
+            "duration": "WIL turns",
+            "description": "Reduce the target's attack skills by -20.",
+            "flavour": "The target's hands start to tremble and shake terribly, as a cloud of red dust surrounds them for the duration of the spell."
         },
-        "CorruptWeapon": {
+        "Corrupt Weapon": {
             "pp": "2",
             "range": "Touch",
             "resisted": "No",
-            "duration": "WILturns",
-            "description": ".",
-            "flavour": "Thetargetweapondeals+D4necroticdamageAcoatofgreen,pus-likesubstancecoverstheweaponforamoment,onlytobe absorbedimmediatelyafter,leavingafaint,greenglowbehind."
+            "duration": "WIL turns",
+            "description": "The target weapon deals +D4 necrotic damage.",
+            "flavour": "A coat of green, pus-like substance covers the weapon for a moment, only to be absorbed immediately after, leaving a faint, green glow behind."
         },
-        "DispelSorcery": {
+        "Dispel Sorcery": {
             "pp": "5",
-            "range": "20ft",
+            "range": "20 ft",
             "resisted": "No",
             "duration": "Permanent",
-            "description": "Thesorcerernegatesoneinstanceofmagiceffectorpower.",
-            "flavour": "Astralflameswashoverthesorcerer'starget,collidingwiththeexistingsorcery andburningitaway."
+            "description": "The sorcerer negates one instance of magic effect or power.",
+            "flavour": "Astral flames wash over the sorcerer's target, colliding with the existing sorcery and burning it away."
         },
         "Drown": {
             "pp": "5",
-            "range": "30ft",
+            "range": "30 ft",
             "resisted": "Yes",
-            "duration": "WILx2turns",
-            "description": "The target's lungs fill with liquid, threatening to drown them. Use the standard Drowning rules (page 34); at the end of the spell's duration the targetmustmakeaVitalitychecktorecoverthelostCON.AnylostCONwill berecoveredafter1hour.ADrowningtargetcandolittleelsebutgaspforair, causingthemtolosetheirturn.Thisspellonlyaffectslivingcreatures.",
-            "flavour": "Ablack,tar-likesubstancefillsthetarget'slungs,pouringoutfromtheirmouth andnoseastheyfighttobreathe."
+            "duration": "WILx2 turns",
+            "description": "The target's lungs fill with liquid, threatening to drown them. Use the standard Drowning rules (page 34); at the end of the spell's duration the target must make a Vitality check to recover the lost CON. Any lost CON will ber ecovered after 1 hour. A Drowning target can do little else but gasp for air, causing them to lose their turn. This spell only affects living creatures.",
+            "flavour": "A black, tar-like substance fills the target's lungs, pouring out from their mouth and nose as they fight to breathe."
         },
         "Enthrall": {
             "pp": "5",
-            "range": "30ft",
+            "range": "30 ft",
             "resisted": "Yes",
-            "duration": "WILturns",
-            "description": "ThetargetbecomesCharmed.",
-            "flavour": "An ethereal rope shoots from the sorcerer's head to the target's heart, becominginvisibletoallbutthesorcerer."
+            "duration": "WIL turns",
+            "description": "The target becomes Charmed.",
+            "flavour": "An ethereal rope shoots from the sorcerer's head to the target's heart, becoming invisible to all but the sorcerer."
         },
-        "FlamingHand": {
+        "Flaming Hand": {
             "pp": "3",
-            "range": "10ft",
+            "range": "10 ft",
             "resisted": "No",
             "duration": "Instantaneous",
-            "description": "Thesorcererprojectsflamesfromtheirhand,dealingD8firedamagetotheir target.",
-            "flavour": "Ethereal flames erupt from the sorcerer's hand, manifesting a bolt of raging fireinfrontofthem."
+            "description": "The sorcerer projects flames from their hand, dealing D8 fire damage to their target.",
+            "flavour": "Ethereal flames erupt from the sorcerer's hand, manifesting a bolt of raging fire in front of them."
         },
-        "HealMajorWound": {
+        "Heal Major Wound": {
             "pp": "6",
             "range": "Touch",
             "resisted": "No",
             "duration": "Permanent",
-            "description": "The character is healed of all consequences caused by receiving a Major Woundorcriticalhit.Thisspellhealstheeffectsofthewound,butnoHPare recovered.",
-            "flavour": "Thetargetbecomessuddenlystiff,asavisibleforcegoesthroughtheirbody,the skinbulgingandbonessnappingintoplace."
+            "description": "The character is healed of all consequences caused by receiving a Major Wound or critical hit.This spell heals the effects of the wound, but no HP are recovered.",
+            "flavour": "The target becomes suddenly stiff, as a visible force goes through their body, the skin bulging and bones snapping into place."
         },
-        "PowerNexus": {
+        "Power Nexus": {
             "pp": "Special",
             "range": "Touch",
             "resisted": "No",
             "duration": "Special",
-            "description": "Thisspellallowsthesorcerertodesignateamediumtolargeobject(astone, avase,abrazier,etc.)asareservoirofPowerPoints.Whenevertheychoose, the sorcerer can \u201cpour\u201d any amount of PP into the Power Nexus, up to a maximumofWILx3.TheycanwithdrawanyamountofPPstoredthiswayat will,aslongastheyremainatadistanceof20ftorless.Theobjectcannotbe movedortheattunementislost.A torrent of astral energy emerges from the sorcerer's chest, pouring into the PowerNexus.",
-            "flavour": "TheNexusglowsbrighterthemorepoweritcontains."
+            "description": "This spell allows the sorcerer to designate a medium to large object (a stone, a vase, a brazier, etc.) as a reservoir of Power Points. Whenever they choose, the sorcerer can \u201cpour\u201d any amount of PP into the Power Nexus, up to a maximum of WILx3. They can withdraw any amount of PP stored this way at will, as long as they remain at a distance of 20ft or less. The object cannot be moved or the attunement is lost. A torrent of astral energy emerges from the sorcerer's chest, pouring into the Power Nexus.",
+            "flavour": "The Nexus glows brighter the more power it contains."
         },
-        "PurifyWater": {
+        "Purify Water": {
             "pp": "2",
             "range": "Touch",
             "resisted": "No",
             "duration": "Permanent",
             "description": "Up to half a gallon of water is purified of all substances, making it perfectly drinkable.",
-            "flavour": "Awaveofastralenergygathersallimpuritieswithinthewater,collectingthem intoasingle,floatingspherethatvanishesmomentslater."
+            "flavour": "A wave of astral energy gathers all impurities within the water, collecting them into a single, floating sphere that vanishes moments later."
         },
-        "StitchWound": {
+        "Stitch Wound": {
             "pp": "4",
             "range": "Touch",
             "resisted": "No",
             "duration": "Permanent",
-            "description": "ThetargethealsD4+5HP.",
-            "flavour": "Blood emerges from the sorcerer's fingertips in the shape of a red thread, stitchingupthetarget'swounds."
+            "description": "The target heals D4+5 HP.",
+            "flavour": "Blood emerges from the sorcerer's fingertips in the shape of a red thread, stitching up the target's wounds."
         },
         "Stun": {
             "pp": "3",
-            "range": "30ft",
+            "range": "30 ft",
             "resisted": "Yes",
             "duration": "WIL",
-            "description": "ThetargetbecomesStunned.WithasuccessfulVitalitycheck,thetargetcan shakeitoffatthebeginningoftheirnextturn.",
-            "flavour": "Agiant,decrepithandappearsabovethetarget'shead,strikingthemmoments later."
+            "description": "The target becomes Stunned. With a successful Vitality check, the target can shake i toff at the beginning of their next turn.",
+            "flavour": "A giant, decrepit hand appears above the target's head, striking them moments later."
         },
-        "SummonElemental": {
+        "Summon Elemental": {
             "pp": "10",
-            "range": "30ft",
+            "range": "30 ft",
             "resisted": "No",
-            "duration": "WILturns",
-            "description": "Inordertocastthisspell,thesorcererneedstohaveasourceofthedesired element at hand. It takes 4 rounds to complete this spell, resulting in the summoning of an elemental of the desired element that will obey simple commands.",
-            "flavour": "A humanoid figure made of the chosen element materializes in front of the sorcerer, with barely-contained fury shining in its eyes, clearly showing its unwillingnesstobeboundtoamortal."
+            "duration": "WIL turns",
+            "description": "In order to cast this spell, the sorcerer needs to have a source of the desired element at hand. It takes 4 rounds to complete this spell, resulting in the summoning of an elemental of the desired element that will obey simple commands.",
+            "flavour": "A humanoid figure made of the chosen element materializes in front of the sorcerer, with barely-contained fury shining in its eyes, clearly showing its unwillingness to be bound to a mortal."
         },
-        "SumonMinorDemon": {
+        "Sumon Minor Demon": {
             "pp": "10",
-            "range": "30ft",
+            "range": "30 ft",
             "resisted": "No",
-            "duration": "WILturns",
-            "description": "In order to cast this spell, the sorcerer needs to sacrifice 3 HP. It takes 3 roundstocompletethisspell,resultinginthesummoningofaminordemon, asdescribedonpage126.Thedemonisboundtothesorcereruntilthespell durationisover,andwillobeytheircommands.While chanting forbidden words of power, the sacrificial blood pools into a single quickly expanding sphere, tearing the very fabric of reality and opening a portal to the Netherrealm.",
-            "flavour": " The grotesque, obscene form of a demon steps through,anauraofdisdainandmockeryemanatingfromit."
+            "duration": "WIL turns",
+            "description": "In order to cast this spell, the sorcerer needs to sacrifice 3 HP. It takes 3 rounds to complete this spell, resulting in the summoning of a minor demon, as described on page 126. The demon is bound to the sorcerer until the spell duration is over,and will obey their commands.",
+            "flavour": "While chanting forbidden words of power, the sacrificial blood pools into a single quickly expanding sphere, tearing the very fabric of reality and opening a portal to the Nether realm. The grotesque, obscene form of a demon steps through, an aura of disdain and mockery emanating from it."
         },
-        "UnnaturalReflexes": {
+        "Unnatural Reflexes": {
             "pp": "2",
             "range": "Self",
             "resisted": "No",
             "duration": "WILturns",
-            "description": "Thesorcerer'sDodgeskillisincreasedby+20.",
-            "flavour": "With a loud thundering sound, a bolt of astral energy strikes the sorcerer, empoweringtheireverymove."
+            "description": "The sorcerer's Dodge skill is increased by +20.",
+            "flavour": "With a loud thundering sound, a bolt of astral energy strikes the sorcerer, empowering their every move."
         },
         "Waterlungs": {
             "pp": "3",
             "range": "Self",
             "resisted": "No",
             "duration": "WIL",
-            "description": "For the duration of the spell, the sorcerer can breathe in water, but not outsideofit.",
-            "flavour": "With a cracking, slightly disturbing sound, gills open in the sorcerer's throat, openingandclosinginsyncwiththeirheartbeat."
+            "description": "For the duration of the spell, the sorcerer can breathe in water, but not outside of it.",
+            "flavour": "With a cracking, slightly disturbing sound, gills open in the sorcerer's throat, opening and closing in sync with their heart beat."
         }
     },
     "idiosyncracies": [
-        "Eachtimethespelliscast,thesorcererloses1HP",
-        "Afterthisspelliscast,anyspellcastina20ft.radiussuffers-20totheSpellEffectroll",
-        "Castingthisspellistaxing,causingthesorcerertoactwith-10duringthenextD4rounds",
-        "Thespellistaintedwithdemonicinfluences.Ifthecasterdoesn'tpassaVitalitycheck,theymustrollontheDemonicCorruptiontable",
-        "Alivingcreaturemustbesacrificedinordertocastthisspell",
-        "ThespellrequirestwiceasusualPPtobecast",
-        "ThespellissoexhaustingthatthecharactermustpassaVitalitycheck orbeforcedtorestforD4roundsaftercastingit.Duringthistimetheycanonlydefendthemself",
-        "Thespellrequiresacupoffreshwatertobespilledbeforecasting",
-        "Thisspellismoredifficulttocastthanothers.-10Tenacitywhencastingit",
-        "Thespellcannotbeusedonhumanoids",
-        "Aftercastingthespell,there'sa50%chancethesorcererwillforgetit",
-        "Animalsareterrifiedbythisspell.Thisdoesn'tincludelarge,aggressivebeasts",
-        "Thisspellcanonlybecastattouchrange",
-        "Eachtimethisspelliscast,arandomallysuffersD4damage",
-        "+10totheSpellEffectcheckifthespelliscastduringtheday,-10ifit's castduringthenight",
-        "Eachtimethisspelliscastathundercanbeheardinthedistance",
-        "Nearbyvegetationwitherswhenthespelliscast",
-        "Thesorcerer'shandsturnprogressivelyblackereachtimethisspelliscast,permanently",
-        "Thesorcerersweatsbloodeachtimethisspelliscast,althoughtheysuffernoharm",
-        "Abrightlightemergesfromthesorcerer'shandduringthenextD4roundsaftercastingthisspell",
-        "Thespellcanbesharedwithanotherfriendlysorcererwhocanchoosetoassist,granting+20totheSpellEffectcheck",
-        "Thespellcleansesanegativeconditionfromthesorcerer",
-        "Ifthesorcerersochooses,thespellconsumesasinglepreciousstoneintheirpossession,allowingforthespelltobecastwithoutaSpellEffectcheck",
-        "Thesorcerercanmoveanextra10ft.thenextroundaftercastingthisspell",
-        "Thesorcerercanchooseanotherwillingtargettodeliverthespellintheirstead",
-        "Ifusingashardtocastthisspell,there'sa50%chancetheshardisnot consumedbyit",
-        "Castingthisspellplungesthesurrounding10ft.areaintoabsolutedarknessduringthenextD4rounds.Thesorcererisunaffectedbyitandcanseeperfectly",
-        "Successivecastsofthisspell(asinturnafterturn)grantacumulative+10totheSpellEffectcheck",
-        "Thisspelliscastinstantaneously",
-        "Thesorcererphasesoutofrealityforafewseconds,gaining+20Dodgeforthewholeround",
-        "Thesorcererbecomesaterrifyingvisagewhilecastingthisspell,forcingallenemiestopassaTenacitycheckorlosetheirnextturn",
-        "Castingthisspellgrantsthesorcerer+D4temporaryHP",
-        "ThesorcererisallowedtorolltwiceontheSpellEffecttable,choosingthehighestroll",
-        "ThisspellhasitsPPcostreducedbyhalf(roundingup)",
-        "Thisspellisuniquelystable,granting+20totheSpellEffectcheck",
-        "Castingthisspellsurroundsthesorcererwithanauraoffirethatdeals D4damagetoanyonewhoattacksthemduringthenextD4rounds"
+        "Each time the spell is cast, the sorcerer loses 1 HP",
+        "After this spell is cast, any spell cast i na 20ft. radius suffers -20 to the Spell Effect roll",
+        "Casting this spell is taxing, causing the sorcerer to act with -10 during the next D4 rounds",
+        "The spell is taintedw ith demonic influences. If the caster doesn't pass  aVitality check, they must roll on the Demonic Corruption table",
+        "A living creature must be sacrificed in order to cast this spell",
+        "The spell requires twice as usual PP to be cast",
+        "The spell is so exhausting that the character must pass a Vitality check or be forced to rest for D4 rounds after casting it. During this time they can only defend themself",
+        "The spell requires a cup of fresh water to be spilled before casting",
+        "This spell is more difficult to cast than others. -10 Tenacity when casting it",
+        "The spell cannot be used on humanoids",
+        "After casting the spell, there's a 50% chance the sorcerer will forget it",
+        "Animals are terrified by this spell. This doesn't include large, aggressive beasts",
+        "This spell can only becast at touch range",
+        "Each time this spell is cast, a random ally suffers D4 damage",
+        "+10 to the Spell Effect check if the spell is cast during the day, -10 if it's cast during the night",
+        "Each time this spell is cast a thunder can be heard in the distance",
+        "Nearby vegetation withers when the spell is cast",
+        "The sorcerer's hands turn progressively blacker each time this spell i scast, permanently",
+        "Thesorcerer sweats blood each time this spell is cast, although they suffer no harm",
+        "A bright light emerges from the sorcerer's hand during the next D4 rounds after casting this spell",
+        "The spell can be shared with another friendly sorcerer who can choose to assist, granting +20 to the Spell Effect check",
+        "The spell cleanses a negative condition from the sorcerer",
+        "If the sorcerer so chooses, the spell consumes a single precious stone in their possession, allowing for the spell to be cast without a Spell Effect check",
+        "The sorcerer can move an extra 10ft. the next round after casting this spell",
+        "The sorcerer can choose another willing target to deliver thespell in their stead",
+        "If using a shard to cast this spell, there's a 50% chance the shard is not consumed by it",
+        "Casting this spell plunges the surrounding 10ft. area into absolute darkness during the next D4 rounds. The sorcerer is unaffected by it and can see perfectly",
+        "Successive casts of this spell (as in turn after turn) grant a cumulative +10 to the Spell Effect check",
+        "This spell is cast instantaneously",
+        "The sorcerer phases out of reality for a few seconds, gaining +20 Dodge for the whole round",
+        "The sorcerer becomes a terrifying visage while casting this spell, forcing all enemies to pass a Tenacity check or lose their next turn",
+        "Casting this spell grants the sorcerer +D4 temporary HP",
+        "The sorcerer is allowed to roll twice on the Spell Effect table, choosing the highest roll",
+        "This spell has its PP cost reducedby half (rounding up)",
+        "This spelli s uniquely stable, granting +20 to the Spell Effect check",
+        "Casting this spell surrounds the sorcerer with an aura of fire that deals D4 damage to anyone who attacks them during the next D4 rounds"
     ]
 }
