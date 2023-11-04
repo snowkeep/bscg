@@ -161,6 +161,7 @@ async function genChar() : Promise<BSCharacter> {
   skills.forEach((name) => { bsdata["skills"][name]["score"] = 0; })
 
   // spells in place of +20 skills
+  // TODO: some idosyncracies adjust spell stats
   let mySpells:charSpell[] = [];
   const spells = shuffleList(Object.keys(bsdata["spells"]));
   if (numSpells > 0) {
@@ -229,8 +230,8 @@ async function genChar() : Promise<BSCharacter> {
   const escape = getRandomfromList(bsdata["escape"]);
   notes.push(`After ${ getRandomfromList(bsdata["length"]).toLowerCase() }, ${ escape["means"] }.`);
   // adjust skill based on escape method
-  const skill = escape["adjust"].replace("+5", "");
-  console.log(`Adusting ${ skill } skill for escape attempt`);
+  const skill = escape["adjust"].replace("+5 ", "");
+  console.log(`Adjusting ${ skill } skill for escape attempt`);
   bsdata["skills"][skill]["score"] += 5;
 
   // do we steal something from the cult?
@@ -300,7 +301,17 @@ async function genChar() : Promise<BSCharacter> {
   });
 
   // gear
-  myItems.push(getRandomfromList(bsdata["gear"]));
+  // if it starts with Dx, roll and replace
+  const gear = getRandomfromList(bsdata["gear"]);
+  if (gear[0] == "D") {
+    console.log(gear);
+    const tokens = gear.split(" ");
+    const amount = roll(Number(tokens[0].replace("D", "")));
+    tokens.shift();
+    myItems.push(`${ amount } ${ tokens.join(" ") }`);
+  } else {
+    myItems.push(gear);
+  }
 
   // derived values - go last because some of the above adjust stats
   let attribs:charAttr = {
