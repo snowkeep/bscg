@@ -1,3 +1,4 @@
+![Broken Shore Character Generator logo](/assets/bsgc.png)
 # bscg
 WIP Broken Shores Character Generator
 
