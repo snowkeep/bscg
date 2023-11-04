@@ -158,7 +158,7 @@ async function genChar() : Promise<BSCharacter> {
   }
 
   // rest of the skills get 0
-  skills.forEach((name) => { bsdata["skills"][name]["score"] = 0; })
+  skills.forEach((name) => { bsdata["skills"][name]["score"] = 0; });
 
   // spells in place of +20 skills
   // TODO: some idosyncracies adjust spell stats
@@ -166,7 +166,7 @@ async function genChar() : Promise<BSCharacter> {
   const spells = shuffleList(Object.keys(bsdata["spells"]));
   if (numSpells > 0) {
     for (let i = 0; i < numSpells; i++) {
-      const thisSpell =bsdata["spells"][spells[i]];
+      const thisSpell = bsdata["spells"][spells[i]];
       mySpells.push({
         name: spells[i],
         pp: thisSpell["pp"],
@@ -206,7 +206,7 @@ async function genChar() : Promise<BSCharacter> {
         break;
       case "Sorcerer":
         console.log("Adding spell for Sorcerer talent");
-        const thisSpell =bsdata["spells"][spells[numSpells]];
+        const thisSpell = bsdata["spells"][spells[numSpells]];
         mySpells.push({
           name: spells[i],
           pp: thisSpell["pp"],
@@ -223,6 +223,20 @@ async function genChar() : Promise<BSCharacter> {
         break;
     };
   }
+
+  // modify spells for idiosyncracies
+  mySpells.forEach((spell) => {
+    if (spell.idiosyncracy.includes("twice as usual PP")) {
+      console.log("Adjusting spell due to idiosyncracy");
+      spell.pp *= 2;
+    } else if (spell.idiosyncracy.includes("touch range")) {
+      console.log("Adjusting spell due to idiosyncracy");
+      spell.range = "Touch";
+    } else if (spell.idiosyncracy.includes("PP cost reduced")) {
+      console.log("Adjusting spell due to idiosyncracy");
+      spell.pp = Math.ceil(spell.pp / 2);
+    }
+  });
 
   // cult info
   let notes:string[] = [];

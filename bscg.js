@@ -166,6 +166,21 @@ function genChar() {
             }
             ;
         }
+        // modify spells for idiosyncracies
+        mySpells.forEach((spell) => {
+            if (spell.idiosyncracy.includes("twice as usual PP")) {
+                console.log("adjusting spell due to idiosyncracy");
+                spell.pp *= 2;
+            }
+            else if (spell.idiosyncracy.includes("touch range")) {
+                console.log("adjusting spell due to idiosyncracy");
+                spell.range = "Touch";
+            }
+            if (spell.idiosyncracy.includes("PP cost reduced")) {
+                console.log("adjusting spell due to idiosyncracy");
+                spell.pp = Math.ceil(spell.pp / 2);
+            }
+        });
         // cult info
         let notes = [];
         notes.push(`Captured by ${getRandomfromList(Object.keys(bsdata["cults"]))} because ${getRandomfromList(bsdata["why"])}.`);
@@ -242,7 +257,7 @@ function genChar() {
             }
         });
         // gear
-        // TODO: look for starting with D and roll amount
+        // if it starts with Dx, roll and replace
         const gear = getRandomfromList(bsdata["gear"]);
         if (gear[0] == "D") {
             console.log(gear);

@@ -678,7 +678,7 @@
         "The spell cannot be used on humanoids",
         "After casting the spell, there's a 50% chance the sorcerer will forget it",
         "Animals are terrified by this spell. This doesn't include large, aggressive beasts",
-        "This spell can only becast at touch range",
+        "This spell can only be cast at touch range",
         "Each time this spell is cast, a random ally suffers D4 damage",
         "+10 to the Spell Effect check if the spell is cast during the day, -10 if it's cast during the night",
         "Each time this spell is cast a thunder can be heard in the distance",
