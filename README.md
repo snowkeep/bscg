@@ -2,8 +2,8 @@
 WIP Broken Shores Character Generator
 
 ## Todo:
-[x] "Unarmed Combat" missing from skill list
-[x] roll amounts for Dx starting gear
-[x] adjust spell details for idiosyncracies that adjust PP, etc
-[ ] html
-[ ] pdf
+ - [x] "Unarmed Combat" missing from skill list
+ - [x] roll amounts for Dx starting gear
+ - [x] adjust spell details for idiosyncracies that adjust PP, etc
+ - [ ] html
+ - [ ] pdf
