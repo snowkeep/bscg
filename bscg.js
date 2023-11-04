@@ -169,15 +169,15 @@ function genChar() {
         // modify spells for idiosyncracies
         mySpells.forEach((spell) => {
             if (spell.idiosyncracy.includes("twice as usual PP")) {
-                console.log("adjusting spell due to idiosyncracy");
+                console.log("Adjusting spell due to idiosyncracy");
                 spell.pp *= 2;
             }
             else if (spell.idiosyncracy.includes("touch range")) {
-                console.log("adjusting spell due to idiosyncracy");
+                console.log("Adjusting spell due to idiosyncracy");
                 spell.range = "Touch";
             }
-            if (spell.idiosyncracy.includes("PP cost reduced")) {
-                console.log("adjusting spell due to idiosyncracy");
+            else if (spell.idiosyncracy.includes("PP cost reduced")) {
+                console.log("Adjusting spell due to idiosyncracy");
                 spell.pp = Math.ceil(spell.pp / 2);
             }
         });
@@ -304,8 +304,9 @@ function genChar() {
         };
     });
 }
-/*
 function genHTML() {
+}
+/*
   // write stats and attributes to the HTML doc
   let statListElem = document.getElementById("stats");
   statMap.forEach((value: number, stat: string) => {
@@ -359,3 +360,4 @@ function genHTML() {
 */
 //genChar();
 genChar().then((res) => console.log(res));
+export {};

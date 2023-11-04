@@ -1,3 +1,5 @@
+import { PDFDocument } from 'pdf-lib';
+
 function roll(dice: number) : number {
   /**
     * Emulates a dice roll.
@@ -365,8 +367,12 @@ async function genChar() : Promise<BSCharacter> {
   }
 }
 
-/*
+
 function genHTML() {
+
+
+}
+/*
   // write stats and attributes to the HTML doc
   let statListElem = document.getElementById("stats");
   statMap.forEach((value: number, stat: string) => {
@@ -422,4 +428,5 @@ function genHTML() {
 
 
 //genChar();
-genChar().then((res) => console.log(res));
+//genChar().then((res) => console.log(res));
+genHTML();

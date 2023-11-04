@@ -7,6 +7,8 @@ All files in the data directory are under the Creative Commons Attribution 4.0 I
 
 json data is extracted from Broken Shores by Blackoath Entertainment.  Get a copy [here](https://blackoathgames.com/brokenshores).
 
+pdflib is under the MIT license and copyright by Anbrew Dillon.  Check it out [here](https://pdf-lib.js.org).
+
 Character generator code is under the GNU Affero General Public License, v3.
 
 ## Todo:
