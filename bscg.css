@@ -12,12 +12,17 @@ img.logo {
   width: 35%;
 }
 
+img.github {
+  vertical-align: middle;
+  height: 20px;
+}
+
 body {
   font-family: 'Crimson Pro';
 /*  font-size: 20px; */
 }
 
-td.right {
+.right {
   text-align: right;
 }
 
@@ -30,6 +35,11 @@ td.right {
   float: left;
   width: 66.66%;
 
+}
+
+.col2 {
+  float: left;
+  width: 50%;
 }
 
 .columns:after {
