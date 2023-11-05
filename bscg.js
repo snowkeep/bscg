@@ -278,6 +278,7 @@ function genChar() {
             rations -= 1;
             ally = true;
         }
+        myItems.push(`${rations} rations`);
         // weapon
         const wn = roll(100);
         Object.keys(bsdata["weapons"]).forEach((weapon) => {

@@ -340,6 +340,8 @@ async function genChar() : Promise<BSCharacter> {
     ally = true;
   }
 
+  myItems.push(`${ rations } rations`);
+
   // weapon
   const wn = roll(100);
   Object.keys(bsdata["weapons"]).forEach((weapon) => {
