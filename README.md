@@ -20,4 +20,4 @@ Character generator code is under the GNU Affero General Public License, v3.
  - [ ] make html prettier
 
  ## Issues:
- - spell idiosyncracies and descriptions are having extra newlines
+ - ~~spell idiosyncracies and descriptions are having extra newlines~~ NVM - it's Firefox's PDF display.  Looks fine in dedicated viewers.

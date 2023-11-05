@@ -650,8 +650,7 @@ function fillPDF() {
             idioField.enableMultiline();
             idioField.setFontSize(5);
             idioField.setText(spell["idiosyncracy"] + ".");
-            idioField.updateAppearances();
-            descField.setFontSize(5);
+            descField.setFontSize(6);
             let desc = `Range: ${spell["range"]} / Resisted: ${spell["resisted"]} / Duration: ${spell["duration"]}\n${spell["description"]}`;
             descField.setText(desc);
             count += 1;
