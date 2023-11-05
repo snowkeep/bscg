@@ -173,7 +173,7 @@
             "adjust": "+5 Unarmed Combat"
         },
         {
-            "means": "I saw an opportunity andI took it",
+            "means": "I saw an opportunity and I took it",
             "adjust": "+5 Perception"
         },
         {
@@ -199,32 +199,32 @@
     ],
     "steal": {
         "3D10 shards": {
-            "price": "You lost a finger in the fight though",
+            "price": "I lost a finger in the fight though",
             "reduce": "-1 DEX",
             "encumbering": true
         },
         "An enchanted weapon that deals an extra D4 damage": {
-            "price": "You received a wound that doesn't really heal ",
+            "price": "I received a wound that doesn't really heal ",
             "reduce": "-1 CON",
             "encumbering": true
         },
-        "A moonstone that can store up to 10 PP": {
-            "price": "You suffered a terrible blow to the head",
+        "a moonstone that can store up to 10 PP": {
+            "price": "I suffered a terrible blow to the head",
             "reduce": "-1 INT",
             "encumbering": true
         },
-        "A Ring of Waterlungs (can cast the Waterlungs spell 1/day)": {
-            "price": "Your face was slashed",
+        "a Ring of Waterlungs (can cast the Waterlungs spell 1/day)": {
+            "price": "My face was slashed",
             "reduce": "-1 CHA",
             "encumbering": false
         },
-        "A Bracelet of Flaming Hand (can cast the Flaming Hand spell 1/day)": {
-            "price": "You are now Hunted by the cult",
+        "a Bracelet of Flaming Hand (can cast the Flaming Hand spell 1/day)": {
+            "price": "I am now Hunted by the cult",
             "reduce": "",
             "encumbering": false
         },
-        "A Ring of Healing (can cast the Stitch Wound spell 1/day)": {
-            "price": "You were pretty wounded, start the game having lost 5HP",
+        "a Ring of Healing (can cast the Stitch Wound spell 1/day)": {
+            "price": "I was pretty wounded",
             "reduce": "-5 HP",
             "encumbering": false
         }
@@ -669,7 +669,7 @@
         "Each time the spell is cast, the sorcerer loses 1 HP",
         "After this spell is cast, any spell cast i na 20ft. radius suffers -20 to the Spell Effect roll",
         "Casting this spell is taxing, causing the sorcerer to act with -10 during the next D4 rounds",
-        "The spell is taintedw ith demonic influences. If the caster doesn't pass  aVitality check, they must roll on the Demonic Corruption table",
+        "The spell is tainted with demonic influences. If the caster doesn't pass  aVitality check, they must roll on the Demonic Corruption table",
         "A living creature must be sacrificed in order to cast this spell",
         "The spell requires twice as usual PP to be cast",
         "The spell is so exhausting that the character must pass a Vitality check or be forced to rest for D4 rounds after casting it. During this time they can only defend themself",

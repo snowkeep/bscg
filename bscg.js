@@ -33,7 +33,8 @@ function getBSJson() {
           **/
         const url = "https://raw.githubusercontent.com/snowkeep/bscg/main/data/bscd.json";
         // TODO: remove reload in production
-        let resp = yield fetch(url, { cache: "reload" });
+        //let resp = await fetch(url, {cache: "reload"});
+        let resp = yield fetch(url);
         return JSON.parse(yield resp.text());
     });
 }
@@ -50,6 +51,11 @@ function shuffleList(array) {
     return array;
 }
 function getRandomfromList(arr) {
+    /**
+      * Pulls a random item from a list
+      *
+      * @returns any (list item type)
+      **/
     return arr.length ? arr[Math.floor(Math.random() * arr.length)] : undefined;
 }
 ;
@@ -183,9 +189,9 @@ function genChar() {
         });
         // cult info
         let notes = [];
-        notes.push(`Captured by ${getRandomfromList(Object.keys(bsdata["cults"]))} because ${getRandomfromList(bsdata["why"])}.`);
+        notes.push(`Captured by <em>${getRandomfromList(Object.keys(bsdata["cults"]))}</em> because "${getRandomfromList(bsdata["why"])}."`);
         const escape = getRandomfromList(bsdata["escape"]);
-        notes.push(`After ${getRandomfromList(bsdata["length"]).toLowerCase()}, ${escape["means"]}.`);
+        notes.push(`After ${getRandomfromList(bsdata["length"]).toLowerCase()}, ${escape["means"]} to escape.`);
         // adjust skill based on escape method
         const skill = escape["adjust"].replace("+5 ", "");
         console.log(`Adjusting ${skill} skill for escape attempt`);
@@ -195,15 +201,17 @@ function genChar() {
         let myItems = [];
         let myNEItems = [];
         if (getRandomfromList([true, false])) {
-            const stole = getRandomfromList(Object.keys(bsdata["steal"]));
-            if (stole.slice(0, 18) == "An enchanted weapon") {
+            let stole = getRandomfromList(Object.keys(bsdata["steal"]));
+            let stoleText = stole;
+            if (stole.includes("An enchanted weapon")) {
                 // roll on the weapons and adjust for enchantment
                 const wn = roll(100);
                 Object.keys(bsdata["weapons"]).forEach((weapon) => {
                     if ((wn >= bsdata["weapons"][weapon]["min"]) && (wn <= bsdata["weapons"][weapon]["max"])) {
                         const thisWeapon = bsdata["weapons"][weapon];
+                        stoleText = `an enchanted ${weapon}`;
                         myWeapons.push({ name: weapon, wtype: thisWeapon["type"], damage: `${thisWeapon["damage"]} + D4`, notes: `enchanted, ${thisWeapon["notes"]}` });
-                        myItems.push(`enchanted ${weapon} (${thisWeapon["weight"]})`);
+                        myItems.push(`Enchanted ${weapon} (${thisWeapon["weight"]})`);
                         if (weapon == "Bow") {
                             myItems.push("Quiver (UD6 arrows)");
                         }
@@ -211,17 +219,15 @@ function genChar() {
                 });
             }
             if (bsdata["steal"][stole]["encumbering"]) {
-                if (stole.slice(0, 3) == "3D10") {
-                    myItems.push(`Shards (${roll(10) + roll(10) + roll(10)})`);
-                }
-                else {
-                    myItems.push(stole);
+                if (!stoleText.includes("enchanted")) {
+                    stoleText = stoleText.replace("3D10", `${roll(10) + roll(10) + roll(10)}`);
+                    myItems.push(stoleText);
                 }
             }
             else {
-                myNEItems.push(stole);
+                myNEItems.push(stoleText);
             }
-            notes.push(`You stole ${stole} from the cult.  ${bsdata["steal"][stole]["price"]}.`);
+            notes.push(`I stole ${stoleText} from the cult.  ${bsdata["steal"][stole]["price"]}.`);
             // reducing from stealing
             const red = bsdata["steal"][stole]["reduce"];
             if (red.slice(0, 1) == "-1") {
@@ -239,7 +245,7 @@ function genChar() {
         let rations = roll(4) + 6;
         let ally = getRandomfromList([true, false]);
         if (ally) {
-            notes.push(`You freed an ally during your escape`);
+            notes.push(`I freed an ally during my escape`);
             wealth -= 20;
             rations -= 1;
             ally = true;
@@ -260,7 +266,6 @@ function genChar() {
         // if it starts with Dx, roll and replace
         const gear = getRandomfromList(bsdata["gear"]);
         if (gear[0] == "D") {
-            console.log(gear);
             const tokens = gear.split(" ");
             const amount = roll(Number(tokens[0].replace("D", "")));
             tokens.shift();
@@ -281,7 +286,7 @@ function genChar() {
         // set the skills -  after any adjusts
         let mySkills = [];
         for (const name in bsdata["skills"]) {
-            mySkills.push({ name: name, value: bsdata["skills"][name]["score"] });
+            mySkills.push({ name: name, stat: bsdata["skills"][name]["attribute"], value: bsdata["skills"][name]["score"] });
         }
         return {
             hp: stats.con * 2 + hpMod,
@@ -305,59 +310,355 @@ function genChar() {
     });
 }
 function genHTML() {
+    return __awaiter(this, void 0, void 0, function* () {
+        /**
+          * Creates a bsCharacter and displays it as htmn
+          *
+          * @returns none
+          **/
+        const charObject = yield genChar();
+        globalChar = charObject;
+        console.log(charObject);
+        // stats
+        const statTableElem = document.getElementById("stats");
+        for (const [name, val] of Object.entries(charObject["stats"])) {
+            const rowElem = document.createElement("tr");
+            const value = document.createElement("td");
+            const stat = document.createElement("td");
+            value.textContent = val;
+            stat.textContent = name.slice(0, 1).toUpperCase() + name.slice(1);
+            rowElem.appendChild(stat);
+            rowElem.appendChild(value);
+            statTableElem === null || statTableElem === void 0 ? void 0 : statTableElem.appendChild(rowElem);
+        }
+        // attributes
+        const attribTableElem = document.getElementById("attribs");
+        for (const [name, val] of Object.entries(charObject["attributes"])) {
+            const rowElem = document.createElement("tr");
+            const value = document.createElement("td");
+            const attrib = document.createElement("td");
+            value.textContent = val;
+            attrib.textContent = name.slice(0, 1).toUpperCase() + name.slice(1);
+            rowElem.appendChild(attrib);
+            rowElem.appendChild(value);
+            attribTableElem === null || attribTableElem === void 0 ? void 0 : attribTableElem.appendChild(rowElem);
+        }
+        // secondary attributes
+        const secondsTableElem = document.getElementById("seconds");
+        const hpli = document.createElement("tr");
+        const ppli = document.createElement("tr");
+        const spli = document.createElement("tr");
+        const rspli = document.createElement("tr");
+        const strength = document.createElement("tr");
+        hpli.innerHTML = `<td>HP</td> <td>${charObject["chp"]} / ${charObject["hp"]}</td>`;
+        ppli.innerHTML = `<td>PP</td> <td>${charObject["pp"]}</td>`;
+        spli.innerHTML = `<td>Walk speed</td> <td>${charObject["speed_walk"]}</td>`;
+        rspli.innerHTML = `<td>Run speed</td> <td>${charObject["speed_walk"] * 2}</td>`;
+        strength.innerHTML = `<td>Strength</td> <td>${charObject["stats"]["str"] + 10}</td>`;
+        secondsTableElem === null || secondsTableElem === void 0 ? void 0 : secondsTableElem.appendChild(hpli);
+        secondsTableElem === null || secondsTableElem === void 0 ? void 0 : secondsTableElem.appendChild(ppli);
+        secondsTableElem === null || secondsTableElem === void 0 ? void 0 : secondsTableElem.appendChild(spli);
+        secondsTableElem === null || secondsTableElem === void 0 ? void 0 : secondsTableElem.appendChild(rspli);
+        secondsTableElem === null || secondsTableElem === void 0 ? void 0 : secondsTableElem.appendChild(strength);
+        // skills
+        const skillTableElem = document.getElementById("skills");
+        for (const skill of Object.values(charObject["skills"])) {
+            const rowElem = document.createElement("tr");
+            const name = document.createElement("td");
+            const stat = document.createElement("td");
+            const value = document.createElement("td");
+            name.textContent = skill["name"];
+            stat.textContent = `(${skill["stat"]})`;
+            value.textContent = `+${skill["value"]}`;
+            value.classList.add("right");
+            rowElem.appendChild(name);
+            rowElem.appendChild(stat);
+            rowElem.appendChild(value);
+            skillTableElem === null || skillTableElem === void 0 ? void 0 : skillTableElem.appendChild(rowElem);
+        }
+        // weapons
+        const wpnTableElem = document.getElementById("weapons");
+        for (const weapon of Object.values(charObject["weapons"])) {
+            const rowElem = document.createElement("tr");
+            const name = document.createElement("td");
+            const type = document.createElement("td");
+            const dmg = document.createElement("td");
+            const notes = document.createElement("td");
+            name.textContent = weapon["name"];
+            type.textContent = `${weapon["wtype"]}`;
+            dmg.textContent = `${weapon["damage"]}`;
+            notes.textContent = `${weapon["notes"]}`;
+            rowElem.appendChild(name);
+            rowElem.appendChild(type);
+            rowElem.appendChild(dmg);
+            rowElem.appendChild(notes);
+            wpnTableElem === null || wpnTableElem === void 0 ? void 0 : wpnTableElem.appendChild(rowElem);
+        }
+        // talents
+        const talentListElem = document.getElementById("talents");
+        for (const talent of Object.values(charObject["talents"])) {
+            const item = document.createElement("li");
+            item.textContent = `${talent}`;
+            talentListElem === null || talentListElem === void 0 ? void 0 : talentListElem.appendChild(item);
+        }
+        // notes
+        const noteListElem = document.getElementById("notes");
+        for (const note of Object.values(charObject["notes"])) {
+            const item = document.createElement("li");
+            item.innerHTML = `${note}`;
+            noteListElem === null || noteListElem === void 0 ? void 0 : noteListElem.appendChild(item);
+        }
+        // Encumburing Items
+        const eiListElem = document.getElementById("eitems");
+        const wealth = document.createElement("li");
+        wealth.textContent = `${charObject["wealth"]}Ҁ`;
+        eiListElem === null || eiListElem === void 0 ? void 0 : eiListElem.appendChild(wealth);
+        for (const eitem of Object.values(charObject["items"])) {
+            const item = document.createElement("li");
+            item.textContent = eitem;
+            eiListElem === null || eiListElem === void 0 ? void 0 : eiListElem.appendChild(item);
+        }
+        // Non-encumbering items
+        const neiListElem = document.getElementById("neitems");
+        for (const neitem of Object.values(charObject["neitems"])) {
+            const item = document.createElement("li");
+            item.textContent = neitem;
+            neiListElem === null || neiListElem === void 0 ? void 0 : neiListElem.appendChild(item);
+        }
+        // spells
+        const spellListElem = document.getElementById("spells");
+        for (const spell of Object.values(charObject["spells"])) {
+            const item = document.createElement("li");
+            const details = document.createElement("ul");
+            const itemPP = document.createElement("li");
+            const itemIdio = document.createElement("li");
+            const itemRng = document.createElement("li");
+            const itemDur = document.createElement("li");
+            const itemRes = document.createElement("li");
+            const itemDesc = document.createElement("li");
+            item.textContent = `${spell["name"]}`;
+            itemPP.textContent = (`PP: ${spell["pp"]}`);
+            itemIdio.textContent = (`Idiosyncracy: ${spell["idiosyncracy"]}`);
+            itemRng.textContent = (`Range: ${spell["range"]}`);
+            itemDur.textContent = (`Duration: ${spell["duration"]}`);
+            itemRes.textContent = (`Resisted: ${spell["resisted"]}`);
+            itemDesc.textContent = spell["description"];
+            details.appendChild(itemPP);
+            details.appendChild(itemIdio);
+            details.appendChild(itemRng);
+            details.appendChild(itemDur);
+            details.appendChild(itemRes);
+            details.appendChild(itemDesc);
+            spellListElem === null || spellListElem === void 0 ? void 0 : spellListElem.appendChild(item);
+            spellListElem === null || spellListElem === void 0 ? void 0 : spellListElem.appendChild(details);
+        }
+    });
 }
-/*
-  // write stats and attributes to the HTML doc
-  let statListElem = document.getElementById("stats");
-  statMap.forEach((value: number, stat: string) => {
-    let item = document.createElement("li");
-    item.textContent = `${ key }: ${ value }`;
-    statListElem?.appendChild(item);
-  });
-  /*
-  let attribListElem = document.getElementById("attribs");
-  attribMap.forEach((value: number, stat: string) => {
-    let item = document.createElement("li");
-    item.textContent = `${ stat }: ${ value }`;
-    attribListElem?.appendChild(item);
-  });
-  let secondsListElem = document.getElementById("seconds");
-  let hpli = document.createElement("li");
-  let ppli = document.createElement("li");
-  let spli = document.createElement("li");
-
-  hpli.textContent = `HP: ${ statMap.get("CON") * 2 }`;
-  ppli.textContent = `PP: ${ statMap.get("WIL") }`;
-  spli.textContent = `Speed: ${ statMap.get("DEX") * 2 }`;
-  secondsListElem?.appendChild(hpli);
-  secondsListElem?.appendChild(ppli);
-  secondsListElem?.appendChild(spli);
-
-  // write skills to html doc
-  let skillListElem = document.getElementById("skills");
-  for (const name in bsdata["skills"]) {
-    let item = document.createElement("li");
-    item.textContent = `${ name } ${ bsdata["skills"][name]["attribute"] } : +${ bsdata["skills"][name]["score"] }`;
-    skillListElem?.appendChild(item);
-  }
-
-    let spellListElem = document.getElementById("spells");
-    for (let i = 0; i < numSpells; i++) {
-      let myspell = spells[i];
-      let myideo = getRandomfromList(bsdata["idiosyncracies"]);
-      let item = document.createElement("li");
-      item.textContent = `${ myspell } -- ${ myideo }`;
-      spellListElem?.appendChild(item);
-    }
-
-  let talentListElem = document.getElementById("talents");
-  for (let i = 0; i < 2; i++) {
-    let item = document.createElement("li");
-    item.textContent = `${ talents[i] } - ${ bsdata["talents"][talents[i]] }`
-    talentListElem?.appendChild(item);
-  }
+function sendJson() {
+    /**
+      * Converts bsCharacter to a json file and downloads item
+      *
+      *@returns: None
+      **/
+    let exportData = "data:text/json;charset=utf-8,";
+    exportData += encodeURIComponent(JSON.stringify(globalChar, null, 2));
+    let downloadAnchorNode = document.createElement('a');
+    downloadAnchorNode.setAttribute("href", exportData);
+    downloadAnchorNode.setAttribute("download", "broken_shores_character.json");
+    document.body.appendChild(downloadAnchorNode); // required for firefox
+    downloadAnchorNode.click();
+    downloadAnchorNode.remove();
 }
-*/
-//genChar();
-genChar().then((res) => console.log(res));
-export {};
+function fillPDF() {
+    return __awaiter(this, void 0, void 0, function* () {
+        const charObject = globalChar;
+        const csUrl = "https://raw.githubusercontent.com/snowkeep/bscg/main/assets/Broken_Shores_Sheets_Fillable_v1_0.pdf";
+        const formPdfBytes = yield fetch(csUrl).then(res => res.arrayBuffer());
+        // @ts-ignore
+        const pdfDoc = yield PDFLib.PDFDocument.load(formPdfBytes);
+        const form = pdfDoc.getForm();
+        const topFieldMap = new Map([
+            ["name", "Text1"],
+            ["chp", "Text14"],
+            ["hp", "Text15"],
+            ["cpp", "Text16"],
+            ["pp", "Text17"],
+            ["speed_walk", "Text18"],
+            ["speed_run", "Text19"],
+            ["wealth", "Coin"],
+            ["strength", "MiS"],
+            ["notes", "not1"]
+        ]);
+        const statFieldMap = new Map([
+            ["str", "Text2"],
+            ["dex", "Text4"],
+            ["con", "Text6"],
+            ["wil", "Text8"],
+            ["int", "Text10"],
+            ["cha", "Text12"]
+        ]);
+        const attribFieldMap = new Map([
+            ["brawn", "Text3"],
+            ["coordination", "Text5"],
+            ["vitality", "Text7"],
+            ["tenacity", "Text9"],
+            ["intellect", "Text11"],
+            ["charm", "Text13"],
+        ]);
+        const skillFieldMap = new Map([
+            ["Acrobatics", "ac"],
+            ["Animal Handling", "ah"],
+            ["Athletics", "at"],
+            ["Command", "com"],
+            ["Crafting", "cr"],
+            ["Dodge", "dod"],
+            ["Insight", "ins"],
+            ["Literacy", "lit"],
+            ["Manipulation", "man"],
+            ["Martial Weapons", "maw"],
+            ["Medicine", "med"],
+            ["Nature", "nat"],
+            ["Perception", "perc"],
+            ["Performance", "perf"],
+            ["Ranged Weapons", "ranw"],
+            ["Sailing", "sal"],
+            ["Siege Weapons", "siw"],
+            ["Simple Melee Weapons", "smw"],
+            ["Sleight of Hand", "soh"],
+            ["Stealth", "sth"],
+            ["Survival", "sur"],
+            ["Unarmed Combat", "uc"]
+        ]);
+        const weaponFields = [
+            ["Text20", "ty1", "dmg1", "no1"],
+            ["Text21", "ty2", "dmg2", "no2"],
+            ["Text22", "ty3", "dmg3", "no3"],
+            ["Text23", "ty4", "dmg3", "no3"],
+        ];
+        const talentFields = ["tal1", "tal2", "tal3", "tal4", "tal5"];
+        const encFields = ["enc1", "ec2", "enc3", "enc4", "enc5"];
+        const neFields = ["NeI1", "NeI2", "NeI3", "NeI4", "NeI5"];
+        const spellFieldMapTempl = new Map([
+            ["name", "so"],
+            ["pp", "sopp"],
+            ["idiosyncracy", "soi"],
+            ["details", "soid"]
+        ]);
+        // stats
+        for (const [name, val] of Object.entries(charObject["stats"])) {
+            const field = form.getTextField(statFieldMap.get(name));
+            field.setText(`${val}`);
+        }
+        // attributes
+        for (const [name, val] of Object.entries(charObject["attributes"])) {
+            const field = form.getTextField(attribFieldMap.get(name));
+            field.setText(`${val}`);
+        }
+        // secondary attributes
+        const chpField = form.getTextField(topFieldMap.get("chp"));
+        const hpField = form.getTextField(topFieldMap.get("hp"));
+        const cppField = form.getTextField(topFieldMap.get("cpp"));
+        const ppField = form.getTextField(topFieldMap.get("pp"));
+        const swField = form.getTextField(topFieldMap.get("speed_walk"));
+        const srField = form.getTextField(topFieldMap.get("speed_run"));
+        chpField.setText(`${charObject["chp"]}`);
+        chpField.setFontSize(8);
+        // @ts-ignore
+        chpField.setAlignment(PDFLib.TextAlignment.Right);
+        hpField.setText(`${charObject["hp"]}`);
+        cppField.setText(`${charObject["pp"]}`);
+        cppField.setFontSize(8);
+        // @ts-ignore
+        cppField.setAlignment(PDFLib.TextAlignment.Right);
+        ppField.setText(`${charObject["pp"]}`);
+        swField.setText(`${charObject["speed_walk"]}`);
+        srField.setText(`${charObject["speed_walk"] * 2}`);
+        // skills
+        for (const skill of Object.values(charObject["skills"])) {
+            const field = form.getTextField(skillFieldMap.get(skill["name"]));
+            field.setText(`+${skill["value"]}`);
+        }
+        // weapons
+        let count = 0;
+        for (const weapon of Object.values(charObject["weapons"])) {
+            const nameField = form.getTextField(weaponFields[count][0]);
+            const typeField = form.getTextField(weaponFields[count][1]);
+            const dmgField = form.getTextField(weaponFields[count][2]);
+            const noteField = form.getTextField(weaponFields[count][3]);
+            nameField.setText(weapon["name"]);
+            typeField.setText(weapon["wtype"]);
+            typeField.setFontSize(6);
+            dmgField.setText(weapon["damage"]);
+            dmgField.setFontSize(6);
+            noteField.setText(weapon["notes"]);
+            noteField.setFontSize(6);
+            count += 1;
+        }
+        // talents
+        count = 0;
+        for (const talent of Object.values(charObject["talents"])) {
+            const field = form.getTextField(talentFields[count]);
+            // not enough space for the full talent - need to look it up
+            field.setText(talent.split(" - ")[0]);
+            count += 1;
+        }
+        // notes
+        let notes = "";
+        for (const note of Object.values(charObject["notes"])) {
+            notes += "• " + note.replace("<em>", "").replace("</em>", "") + "\n";
+        }
+        const noteField = form.getTextField(topFieldMap.get("notes"));
+        noteField.setText(notes);
+        // coins
+        const wealthField = form.getTextField(topFieldMap.get("wealth"));
+        wealthField.setText(`${charObject["wealth"]}`);
+        wealthField.setFontSize(8);
+        // @ts-ignore
+        wealthField.setAlignment(PDFLib.TextAlignment.Right);
+        // encumbering items
+        count = 0;
+        for (const eitem of Object.values(charObject["items"])) {
+            const itemField = form.getTextField(encFields[count]);
+            itemField.setText(eitem);
+            if (eitem.includes("(Heavy)")) {
+                count += 1;
+                const heavyField = form.getTextField(encFields[count]);
+                heavyField.setText("^");
+                // @ts-ignore
+                heavyField.setAlignment(PDFLib.TextAlignment.Center);
+            }
+            count += 1;
+        }
+        // non-encumbering items
+        count = 0;
+        for (const neitem of Object.values(charObject["neitems"])) {
+            const itemField = form.getTextField(neFields[count]);
+            itemField.setText(neitem.split("(")[0]);
+            count += 1;
+        }
+        // spells
+        count = 1;
+        for (const spell of Object.values(charObject["spells"])) {
+            const nameField = form.getTextField(spellFieldMapTempl.get("name") + String(count));
+            const ppField = form.getTextField(spellFieldMapTempl.get("pp") + String(count));
+            const idioField = form.getTextField(spellFieldMapTempl.get("idiosyncracy") + String(count));
+            const descField = form.getTextField(spellFieldMapTempl.get("details") + String(count));
+            nameField.setText(spell["name"]);
+            ppField.setText(spell["pp"]);
+            // @ts-ignore
+            ppField.setAlignment(PDFLib.TextAlignment.Center);
+            idioField.enableMultiline();
+            idioField.setFontSize(5);
+            idioField.setText(spell["idiosyncracy"] + ".");
+            idioField.updateAppearances();
+            descField.setFontSize(5);
+            let desc = `Range: ${spell["range"]} / Resisted: ${spell["resisted"]} / Duration: ${spell["duration"]}\n${spell["description"]}`;
+            descField.setText(desc);
+            count += 1;
+        }
+        const pdfBytes = yield pdfDoc.save();
+        // @ts-ignore
+        download(pdfBytes, "broken_shores_character.pdf", "application/pdf");
+    });
+}
+let globalChar;

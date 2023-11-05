@@ -1,4 +1,4 @@
-![Broken Shore Character Generator logo](/assets/bsgc.png)
+![Broken Shore Character Generator logo](/assets/bscg.png)
 # bscg
 WIP Broken Shores Character Generator
 
@@ -15,5 +15,9 @@ Character generator code is under the GNU Affero General Public License, v3.
  - [x] "Unarmed Combat" missing from skill list
  - [x] roll amounts for Dx starting gear
  - [x] adjust spell details for idiosyncracies that adjust PP, etc
- - [ ] html
- - [ ] pdf
+ - [x] html
+ - [x] pdf
+ - [ ] make html prettier
+
+ ## Issues:
+ - spell idiosyncracies and descriptions are having extra newlines

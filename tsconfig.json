@@ -2,9 +2,10 @@
   "files":  ["bscg.ts"],
   "compilerOptions": {
       "target": "ES6",
-      "lib": ["es2015", "DOM"],
+      "lib": ["es2017", "DOM"],
       "paths": {
         "pdf-lib": ["./vendor/pdf-lib.min.js"]
-      }
+      },
+      "module": "umd"
   }
 }

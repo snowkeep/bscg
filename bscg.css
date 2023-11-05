@@ -1,0 +1,50 @@
+body {
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
+img.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 35%;
+}
+
+body {
+  font-family: 'Crimson Pro';
+/*  font-size: 20px; */
+}
+
+td.right {
+  text-align: right;
+}
+
+.col3 {
+  float: left;
+  width: 33.33%;
+}
+
+.col23 {
+  float: left;
+  width: 66.66%;
+
+}
+
+.columns:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#weapons {
+ border: 1px solid; 
+ border-collapse: collapse;
+}
+
+#weapons th, #weapons td {
+ border: 1px solid; 
+ padding-left: 5px;
+ padding-right: 40px;
+}

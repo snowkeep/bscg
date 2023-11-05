@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Broken Shores Character Generator</title>
+    <link rel="stylesheet" href="bscg.css"/>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Crimson Pro'/>
+    <script src="https://unpkg.com/pdf-lib@1.17.1"></script>
+    <script src="https://unpkg.com/downloadjs@1.4.7"></script>
+    <script src="bscg.js"></script>
+
+  </head>
+  <body onload="genHTML()">
+    <img class="logo" src="assets/bscg.png" alt="Broken Shores Character Generator Logo"/>
+    <p>Broken Shores is by <a href="https://blackoathgames.com/">Blackoath Entertainment</a>.  Buy the <a href="https://blackoathgames.com/brokenshores">game</a>.</p>
+    <button onclick="location.reload(false);">Make Another</button>
+    <button onclick="sendJson()">Download JSON</button>
+    <button onclick="fillPDF()">Generate PDF</button>
+
+
+    <h1>Your Character</h2>
+
+    <div>
+      <div class="columns">
+        <div class="col3">
+          <h2>Stats</h2>
+          <table id="stats">
+          </table>
+        </div>
+
+        <div class="col3">
+          <h2>Attributes</h2>
+          <table id="attribs">
+          </table>
+        </div>
+
+        <div class="col3">
+          <h2>Secondary Attributes</h2>
+          <table id="seconds">
+          </table>
+        </div>
+      </div>
+
+      <div class="columns">
+        <div class="col3">
+          <h2>Skills</h2>
+          <table id="skills">
+          </table>
+        </div>
+
+        <div class="col23">
+          <h2>Weapons</h2>
+          <table id="weapons">
+            <tr>
+              <th></th>
+              <th>Type</th>
+              <th>Damage</th>
+              <th>Notes</th>
+            </tr>
+          </table>
+
+          <h2>Talents</h2>
+          <ul id="talents">
+          </ul>
+
+          <h2>Notes</h2>
+            <ul id="notes">
+            </ul>
+
+          <h2>Items</h2>
+          <h3>Encumbering</h3>
+            <ul id="eitems">
+            </ul>
+          <h3>Non-Encumbering</h3>
+            <ul id="neitems">
+            </ul>
+
+          <h2>Spells</h2>
+          <ul id="spells">
+          </ul>
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </body>
+</html>
