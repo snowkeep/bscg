@@ -58,6 +58,31 @@ function getRandomfromList(arr) {
       **/
     return arr.length ? arr[Math.floor(Math.random() * arr.length)] : undefined;
 }
+function rollChartopia(id) {
+    return __awaiter(this, void 0, void 0, function* () {
+        /**
+          * API lookup on chartopia for random name
+          *
+          * @returns name as promise<string>
+          **/
+        const apiRoot = "https://chartopia.d12dev.com/api/charts";
+        let resp = yield fetch(`${apiRoot}/${id}/roll/`, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({ mult: 1 })
+        });
+        const payload = yield resp.json();
+        console.log(payload);
+        let name = payload["results"][0];
+        if (name.includes("result")) {
+            name = name.split("\n")[1];
+        }
+        return name;
+    });
+}
 ;
 ;
 ;
@@ -70,6 +95,9 @@ function genChar() {
           *
           * @return bsCharacter
           **/
+        // Ironsworn, Ravenloft male, Ravenloft female, fantasy, Ulun, Yen
+        const nameCharts = [38643, 394, 395, 32000, 59263, 59268];
+        const charName = yield rollChartopia(getRandomfromList(nameCharts));
         let stats = {
             str: rollStat(),
             dex: rollStat(),
@@ -83,28 +111,28 @@ function genChar() {
         let chpMod = 0;
         let ppMod = 0;
         // determine the number of starting spells
-        let numSpells = roll(3) - 1;
+        const numSpells = roll(3) - 1;
         console.log(`Taking ${numSpells} spells and  ${5 - numSpells} +20 skills`);
         // get the character data json
         let bsdata = yield getBSJson();
         // shuffle the skill list
         let skills = shuffleList(Object.keys(bsdata["skills"]));
         // one skill gets +60
-        let sixty = skills.shift();
+        const sixty = skills.shift();
         bsdata["skills"][sixty]["score"] = 60;
         // three skills get +40
         for (let _ = 0; _ < 3; _++) {
-            let forty = skills.shift();
+            const forty = skills.shift();
             bsdata["skills"][forty]["score"] = 40;
         }
         // 5 minus the number of starting spells get +20
         for (let _ = 0; _ < 5 - numSpells; _++) {
-            let twenty = skills.shift();
+            const twenty = skills.shift();
             bsdata["skills"][twenty]["score"] = 20;
         }
         // two skills get +10
         for (let _ = 0; _ < 2; _++) {
-            let ten = skills.shift();
+            const ten = skills.shift();
             bsdata["skills"][ten]["score"] = 10;
         }
         // rest of the skills get 0
@@ -289,6 +317,7 @@ function genChar() {
             mySkills.push({ name: name, stat: bsdata["skills"][name]["attribute"], value: bsdata["skills"][name]["score"] });
         }
         return {
+            name: charName,
             hp: stats.con * 2 + hpMod,
             chp: stats.con * 2 + chpMod + hpMod,
             pp: stats.wil + ppMod,
@@ -319,6 +348,11 @@ function genHTML() {
         const charObject = yield genChar();
         globalChar = charObject;
         console.log(charObject);
+        // name
+        const nameElem = document.getElementById("charName");
+        const headerElem = document.createElement("h1");
+        headerElem.textContent = charObject["name"];
+        nameElem === null || nameElem === void 0 ? void 0 : nameElem.appendChild(headerElem);
         // stats
         const statTableElem = document.getElementById("stats");
         for (const [name, val] of Object.entries(charObject["stats"])) {
@@ -544,6 +578,8 @@ function fillPDF() {
             ["idiosyncracy", "soi"],
             ["details", "soid"]
         ]);
+        const nameField = form.getTextField(topFieldMap.get("name"));
+        nameField.setText(`${charObject["name"]}`);
         // stats
         for (const [name, val] of Object.entries(charObject["stats"])) {
             const field = form.getTextField(statFieldMap.get(name));
@@ -561,6 +597,7 @@ function fillPDF() {
         const ppField = form.getTextField(topFieldMap.get("pp"));
         const swField = form.getTextField(topFieldMap.get("speed_walk"));
         const srField = form.getTextField(topFieldMap.get("speed_run"));
+        const strengthField = form.getTextField(topFieldMap.get("strength"));
         chpField.setText(`${charObject["chp"]}`);
         chpField.setFontSize(8);
         // @ts-ignore
@@ -573,6 +610,7 @@ function fillPDF() {
         ppField.setText(`${charObject["pp"]}`);
         swField.setText(`${charObject["speed_walk"]}`);
         srField.setText(`${charObject["speed_walk"] * 2}`);
+        strengthField.setText(`${charObject["stats"]["str"] + 10}`);
         // skills
         for (const skill of Object.values(charObject["skills"])) {
             const field = form.getTextField(skillFieldMap.get(skill["name"]));
