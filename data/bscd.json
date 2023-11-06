@@ -91,7 +91,7 @@
     },
     "talents": {
         "Aim": "For your next attack, add +30 to your Ranged Weapons skill and +1 damage if you spend a whole round aiming.",
-        "AncientSoul": "Increase your PP by +5 permanently.",
+        "Ancient Soul": "Increase your PP by +5 permanently.",
         "Archery Expert": "Attacks made with ranged weapons ignore 2 points of armor.",
         "Backstab": "Double your attack damage when attacking an unsuspecting target with a one-handed melee weapon.",
         "Brace": "When you receive a critical hit, perform a successful Vitality check to avoid rolling on the Critical Hit table. You still receive double the damage as usual though.",
