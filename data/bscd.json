@@ -700,7 +700,7 @@
         "Casting this spell grants the sorcerer +D4 temporary HP",
         "The sorcerer is allowed to roll twice on the Spell Effect table, choosing the highest roll",
         "This spell has its PP cost reducedby half (rounding up)",
-        "This spelli s uniquely stable, granting +20 to the Spell Effect check",
+        "This spell is uniquely stable, granting +20 to the Spell Effect check",
         "Casting this spell surrounds the sorcerer with an aura of fire that deals D4 damage to anyone who attacks them during the next D4 rounds"
     ]
 }
